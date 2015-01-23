@@ -1,0 +1,104 @@
+
+Robo-215-72dpi.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm
+  rotate: true
+  xy: 831, 166
+  size: 45, 24
+  orig: 45, 24
+  offset: 0, 0
+  index: -1
+arm pivot
+  rotate: false
+  xy: 831, 213
+  size: 41, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 351, 154
+  size: 149, 100
+  orig: 149, 100
+  offset: 0, 0
+  index: -1
+foot
+  rotate: false
+  xy: 722, 211
+  size: 107, 43
+  orig: 107, 43
+  offset: 0, 0
+  index: -1
+foot back
+  rotate: false
+  xy: 722, 166
+  size: 107, 43
+  orig: 107, 43
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 199, 154
+  size: 150, 100
+  orig: 150, 100
+  offset: 0, 0
+  index: -1
+laser
+  rotate: false
+  xy: 2, 190
+  size: 195, 64
+  orig: 195, 64
+  offset: 0, 0
+  index: -1
+launcher
+  rotate: false
+  xy: 2, 117
+  size: 185, 71
+  orig: 185, 71
+  offset: 0, 0
+  index: -1
+leg-lower
+  rotate: false
+  xy: 2, 2
+  size: 110, 113
+  orig: 110, 113
+  offset: 0, 0
+  index: -1
+leg-lower back
+  rotate: false
+  xy: 114, 2
+  size: 110, 113
+  orig: 110, 113
+  offset: 0, 0
+  index: -1
+leg-upper
+  rotate: true
+  xy: 502, 156
+  size: 98, 108
+  orig: 98, 108
+  offset: 0, 0
+  index: -1
+leg-upper back
+  rotate: true
+  xy: 612, 156
+  size: 98, 108
+  orig: 98, 108
+  offset: 0, 0
+  index: -1
+light
+  rotate: false
+  xy: 916, 231
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+water gun
+  rotate: false
+  xy: 874, 229
+  size: 40, 25
+  orig: 40, 25
+  offset: 0, 0
+  index: -1
