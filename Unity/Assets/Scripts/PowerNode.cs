@@ -21,7 +21,6 @@ public class PowerNode : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		Debug.Log ("Mouse has been clicked");
 		toggle ();
 	}
 
@@ -52,24 +51,50 @@ public class PowerNode : MonoBehaviour {
 	public void connect(){
 		if (!connected) {
 			connected = true;
-			updateChildren ();
 		}
 	}
 	
 	public void disconnect(){
 		if (connected) {
 			connected = false;
-			updateChildren ();
 		}
 	}
-	
+
 	private void updateChildren(){
-		foreach (PowerNode child in children) {
-			if (isActive ()) child.connect ();
-			else child.disconnect ();
+		if (isActive ()) connectChildren ();
+		else disconnectChildren ();
+	}
+
+	private void disconnectChildren(){
+		Queue<PowerNode> toVisit = new Queue<PowerNode>();
+		addAll (toVisit, children);
+		while (toVisit.Count > 0) {
+			PowerNode child = toVisit.Dequeue();
+			child.disconnect ();
+			if (!child.isActive ()){
+				addAll(toVisit, child.getChildren());
+			}
 		}
 	}
-	
+
+	private void addAll(Queue<PowerNode> q,List<PowerNode> vals){
+		foreach (PowerNode v in vals) {
+			q.Enqueue (v);
+		}
+	}
+
+	private void connectChildren(){
+		Queue<PowerNode> toVisit = new Queue<PowerNode>();
+		addAll (toVisit, children);
+		while (toVisit.Count > 0) {
+			PowerNode child = toVisit.Dequeue();
+			child.connect ();
+			if (child.isActive ()){
+				addAll(toVisit, child.getChildren());
+			}
+		}
+	}
+
 	public void toggle(){
 		on = on ? false : true;
 		updateChildren ();
