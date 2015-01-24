@@ -35,7 +35,7 @@ public class Door : MonoBehaviour
 
         _animation.Update();
         
-        AstarPath.active.UpdateGraphs(guo);
+        //AstarPath.active.UpdateGraphs(guo);
     }
 
     // Update is called once per frame
