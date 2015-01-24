@@ -68,9 +68,11 @@ public class Agent : MonoBehaviour
         _animationHolder.transform.LookAt(_animationHolder.transform.position + dir);
 
         if (_path.IsDone())
-            _animation.Stand();
+            _animation.state.SetAnimation(0, "walk", true);
         else
-            _animation.Walk();
+            _animation.state.SetAnimation(0, "standing", true);
+
+        _animation.Update();
 
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint

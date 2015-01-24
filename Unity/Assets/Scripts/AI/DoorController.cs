@@ -1,18 +1,10 @@
-﻿using Pathfinding;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DoorController : MonoBehaviour
 {
     [SerializeField]
     Button _doorToggle;
-
-    [SerializeField]
-    Door _door;
 
     void Awake()
     {
@@ -21,7 +13,11 @@ public class DoorController : MonoBehaviour
 
     void OnDoorToggleClicked()
     {
-        _door.SetState(!_door.Open);
+        Door[] doors = GameObject.FindObjectsOfType<Door>();
+        Debug.Log("Searching for doors, found " + doors.Length);
+        foreach(var door in doors)
+        {
+            door.SetState(!door.Open);
+        }
     }
-
 }
