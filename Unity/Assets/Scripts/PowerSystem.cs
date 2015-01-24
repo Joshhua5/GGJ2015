@@ -60,7 +60,7 @@ public class PowerSystem : MonoBehaviour {
 		{
 			availablePower++;
 			Debug.Log ("Release 1 unit. Power remaining = " + availablePower);
-			updatePowerSpread ();
+			if (availablePower == 1) updatePowerSpread ();
 		}
 	}
 
