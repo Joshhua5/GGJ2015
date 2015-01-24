@@ -16,20 +16,20 @@ NavMeshLayers:
     cost: 2
     editType: 2
   User Layer 0:
-    name: 
+    name: Room
     cost: 1
     editType: 3
   User Layer 1:
-    name: 
+    name: OpenDoor
     cost: 1
     editType: 3
   User Layer 2:
-    name: 
-    cost: 1
+    name: ClosedDoor
+    cost: 100
     editType: 3
   User Layer 3:
-    name: 
-    cost: 1
+    name: Fire
+    cost: 10000
     editType: 3
   User Layer 4:
     name: 
