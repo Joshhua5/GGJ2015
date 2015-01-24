@@ -18,7 +18,13 @@ public class PowerNode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (isActive ()) this.renderer.material.color = Color.green;
+		else this.renderer.material.color = Color.blue;
+	}
+
+	void OnMouseDown(){
+		Debug.Log ("Mouse has been clicked");
+		toggle ();
 	}
 
 	//bool consumesEnergy = false; 
