@@ -10,12 +10,17 @@ public class PowerNode : MonoBehaviour {
 	public bool consumesPower;
 	public int roomNo;
 
+    // Particle Effect
+    public ParticleSystem triggerEffect;
+    private ParticleSystem privateTriggerEffect;
+
 	private PowerSystem ps;
 	public bool parentConnected = true;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () { 
+        if (triggerEffect != null)
+            privateTriggerEffect = (ParticleSystem)Instantiate(triggerEffect);
 	}
 	
 	// Update is called once per frame
@@ -131,6 +136,9 @@ public class PowerNode : MonoBehaviour {
 				connected = true;
 			}
 		}
+        if (privateTriggerEffect != null)
+            privateTriggerEffect.Play();
+
 		//this.audio.Play ();
 		//Debug.Log (""+roomNo+": toggle pressed. on="+on);
 		updateChildren ();
