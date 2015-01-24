@@ -193,7 +193,7 @@ public class PowerNode : MonoBehaviour {
 			lr.SetPosition(1, child.transform.position);
 			lr.material = new Material(Shader.Find ("Particles/Additive"));
 			lr.SetColors (Color.white,Color.black);
-			lr.SetWidth (0.5f,0.2f);
+			lr.SetWidth (7.0f,5f);
 			child.drawLines ();
 		}
 	}
