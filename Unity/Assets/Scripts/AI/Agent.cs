@@ -11,12 +11,20 @@ public class Agent : MonoBehaviour
     private CharacterController _controller;
     private Path _path;
     private int _currentWaypoint = 0;
+    private SkeletonAnimation _animation;
+
+    [SerializeField]
+    private GameObject _animationHolder;
+
+    private float _speed;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        _speed = Random.Range(AISpeed - 20, AISpeed + 20);
         _seeker = GetComponent<Seeker>();
         _controller = GetComponent<CharacterController>();
+        _animation = GetComponentInChildren<SkeletonAnimation>();
     }
 
     public void SetDestination(Vector3 destination)
@@ -26,21 +34,14 @@ public class Agent : MonoBehaviour
 
     public void OnPathComplete(Path p)
     {
-        Debug.Log("Yay, we got a path back. Did it have an error? " + p.error);
         if (!p.error)
         {
             _path = p;
-            foreach(var pathnode in _path.path)
-            {
-                Debug.Log(_path.GetTraversalCost(pathnode));
-            }
         }
         else
         {
             _path = null;
             Room room = GetCurrentRoom();
-            Debug.Log("Currently in room " + (room == null), room);
-            Debug.Log("Has door: " + room.HasDoor);
         }
         _currentWaypoint = 0;
     }
@@ -60,8 +61,10 @@ public class Agent : MonoBehaviour
         //Direction to the next waypoint
         Vector3 nextWaypoint = new Vector3(_path.vectorPath[_currentWaypoint].x, transform.position.y, _path.vectorPath[_currentWaypoint].z);
         Vector3 dir = (nextWaypoint - transform.position).normalized;
-        dir *= AISpeed * Time.deltaTime;
-        _controller.Move(dir);
+        dir *= _speed;
+        _controller.SimpleMove(dir);
+
+        _animationHolder.transform.LookAt(_animationHolder.transform.position + dir);
 
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
@@ -79,7 +82,6 @@ public class Agent : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100, 1 << Layers.Ground))
         {
             var room = hit.collider.gameObject.GetComponent<Room>();
-            Debug.Log("raycast successful");
             return room;
         }
         else
