@@ -31,6 +31,7 @@ public class PowerSystem : MonoBehaviour {
 		Debug.Log (root.ToString ());
 		a.toggle ();*/
 		root.setPowerSystem (this);
+		root.drawLines ();
 		Debug.Log(root.ToString ());
 		//root.toggle ();
 	}

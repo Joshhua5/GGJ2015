@@ -51,6 +51,7 @@ public class PowerNode : MonoBehaviour {
 	
 	public void add(PowerNode child){
 		children.Add (child);
+		Debug.Log ("Child added");
 	}
 	
 	public List<PowerNode> getChildren(){
@@ -172,6 +173,28 @@ public class PowerNode : MonoBehaviour {
 		Gizmos.color = Color.yellow;
 		foreach (PowerNode c in children) {
 			Gizmos.DrawLine(transform.position, c.transform.position);
+		}
+	}
+	/*
+	 * public Color c1 = Color.white;
+    public Color c2 = new Color(1, 1, 1, 0);
+    void Start() {
+        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+        lineRenderer.SetColors(c1, c2);
+    }*/
+	public void drawLines(){
+		foreach (PowerNode child in children) 
+		{
+			var go = new GameObject();
+			var lr = go.AddComponent<LineRenderer>();
+			//transform.position, c.transform.position
+			lr.SetPosition(0, transform.position);
+			lr.SetPosition(1, child.transform.position);
+			lr.material = new Material(Shader.Find ("Particles/Additive"));
+			lr.SetColors (Color.white,Color.black);
+			lr.SetWidth (0.5f,0.2f);
+			child.drawLines ();
 		}
 	}
 }
