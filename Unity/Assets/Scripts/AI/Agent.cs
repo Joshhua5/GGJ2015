@@ -88,13 +88,8 @@ public class Agent : MonoBehaviour
         RaycastHit hit;
         
         if (Physics.Raycast(ray, out hit, 100, 1 << Layers.Ground))
-        {
-            var room = hit.collider.gameObject.GetComponent<Room>();
-            return room;
-        }
-        else
-        {
-            return null;
-        }
+            return hit.collider.gameObject.GetComponent<Room>();
+        else 
+            return null; 
     }
 }
