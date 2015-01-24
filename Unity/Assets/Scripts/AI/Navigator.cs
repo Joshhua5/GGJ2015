@@ -6,12 +6,12 @@ public class Navigator : MonoBehaviour
     [SerializeField]
     Transform destination;
 
-    [SerializeField]
     Agent _agent;
 
     // Use this for initialization
     void Start()
     {
+        _agent = GetComponent<Agent>();
         _agent.SetDestination(destination.position);
         AstarPath.OnGraphsUpdated += OnGraphsUpdated;
     }
