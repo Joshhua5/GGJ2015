@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "TBt7c9R1pW7+pNHsajD35UDKPSc", "spine": "2.1.08", "width": 130, "height": 18 },
+"skeleton": { "hash": "PqpI6cQzPsxTJFQn2ekFyQ1TwkM", "spine": "2.1.08", "width": 130, "height": 18 },
 "bones": [
 	{ "name": "root" },
 	{ "name": "bone", "parent": "root", "x": 64.73, "y": 11.64 },
@@ -15,7 +15,7 @@
 "skins": {
 	"default": {
 		"base": {
-			"base": { "x": 65.5, "y": 9, "width": 67, "height": 16 }
+			"base": { "x": 65.5, "y": 9, "width": 67, "height": 18 }
 		},
 		"door a": {
 			"door a": { "x": 14.94, "y": -1.64, "rotation": 178.19, "width": 35, "height": 14 }
@@ -59,13 +59,13 @@
 		"bones": {
 			"door b": {
 				"translate": [
-					{ "time": 0, "x": 32.18, "y": -0.74 },
+					{ "time": 0, "x": 32.18, "y": -0.76 },
 					{ "time": 0.3333, "x": 0.51, "y": -0.01 }
 				]
 			},
 			"door a": {
 				"translate": [
-					{ "time": 0, "x": -31.71, "y": -1.01 },
+					{ "time": 0, "x": -31.71, "y": -0.99 },
 					{ "time": 0.3333, "x": -0.08, "y": 0 }
 				]
 			}
