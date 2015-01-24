@@ -120,11 +120,14 @@
      <Compile Include="Assets\Particles\Water.cs" />
      <Compile Include="Assets\Particles\WaterSpawner.cs" />
      <Compile Include="Assets\Scripts\AI\Agent.cs" />
-     <Compile Include="Assets\Scripts\AI\Door.cs" />
      <Compile Include="Assets\Scripts\AI\DoorController.cs" />
      <Compile Include="Assets\Scripts\AI\Navigator.cs" />
+     <Compile Include="Assets\Scripts\AI\RoomController.cs" />
+     <Compile Include="Assets\Scripts\Game\Door.cs" />
+     <Compile Include="Assets\Scripts\Game\Room.cs" />
      <Compile Include="Assets\Scripts\PowerNode.cs" />
      <Compile Include="Assets\Scripts\PowerSystem.cs" />
+     <Compile Include="Assets\Scripts\Utilities\Layers.cs" />
      <Compile Include="Assets\Scripts\Utilities\MonoSingleton.cs" />
      <Compile Include="Assets\Scripts\Utilities\StateMachine.cs" />
      <Compile Include="Assets\spine-csharp\Properties\AssemblyInfo.cs" />
