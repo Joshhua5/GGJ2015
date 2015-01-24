@@ -13,6 +13,7 @@ public class Agent : MonoBehaviour
     private Path _path;
     private int _currentWaypoint = 0;
     private SkeletonAnimation _animation;
+    private Vector3 _destination;
 
     [SerializeField]
     private GameObject _animationHolder;
@@ -31,6 +32,7 @@ public class Agent : MonoBehaviour
     public void SetDestination(Vector3 destination)
     {
         _seeker.StartPath(transform.position, destination, OnPathComplete);
+        _destination = destination;
     }
 
     public void OnPathComplete(Path p)
@@ -79,6 +81,12 @@ public class Agent : MonoBehaviour
         if (Vector3.Distance(transform.position, nextWaypoint) < NextWaypointDistance)
         {
             _currentWaypoint++;
+        } 
+        else if (Vector3.Distance(transform.position, nextWaypoint) > NextWaypointDistance  * 4)
+        {
+            SetDestination(_destination);
+            _path = null;
+            _currentWaypoint = 0;
         }
     }
 

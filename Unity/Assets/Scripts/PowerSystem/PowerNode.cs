@@ -21,7 +21,8 @@ public class PowerNode : MonoBehaviour {
 	private LineRenderer lineIn = null;
 
 	private static Color _lineOn = new Color(0,237,214);
-	private static Color _lineOff = Color.gray;
+	//private static Color _lineOff = new Color(120,120,120);
+	private static Color _lineOff = new Color(0.1f,0.1f,0.1f);
 
 	// Use this for initialization
 	void Start () {
