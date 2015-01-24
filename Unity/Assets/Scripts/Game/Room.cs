@@ -9,6 +9,8 @@ public class Room : MonoBehaviour
     [SerializeField]
     private Door[] _doors;
 
+	public PowerNode powerNode;
+
     public bool HasDoor
     {
         get
