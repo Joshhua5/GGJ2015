@@ -3,11 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PowerNode : MonoBehaviour {
+
 	public List<PowerNode> children;
-	public bool on = false;
+	public bool on = true;
 	public bool connected = true;
 	public bool consumesPower;
 	public int roomNo;
+	public float x;
+	public float y;
+
+	private PowerSystem ps;
+	public bool parentConnected = true;
 
 	// Use this for initialization
 	void Start () {
@@ -26,10 +32,20 @@ public class PowerNode : MonoBehaviour {
 
 	//bool consumesEnergy = false; 
 	
-	public PowerNode(int roomNo, bool cp){
+	public PowerNode(int roomNo,float x, float y,bool cp){
 		children = new List<PowerNode> ();
 		this.roomNo = roomNo;
+		this.x=x;
+		this.y=y;
 		consumesPower = cp;
+	}
+
+	public void setPowerSystem(PowerSystem ps){
+		this.ps=ps;
+		//Debug.Log ("connected to power system with " + ps.totalPower);
+		foreach (PowerNode child in children) {
+			child.setPowerSystem (ps);
+		}
 	}
 	
 	public void add(PowerNode child){
@@ -48,14 +64,20 @@ public class PowerNode : MonoBehaviour {
 		return total;
 	}
 	
-	public void connect(){
+	public bool connect(){
+		parentConnected = true;
 		if (!connected) {
-			connected = true;
-		}
+			if (ps.hasPower () && on){ 
+				connected = true;
+				ps.usePower();
+			}
+		}return true;
 	}
 	
 	public void disconnect(){
+		parentConnected = false;
 		if (connected) {
+			if (isActive ()) ps.releasePower ();
 			connected = false;
 		}
 	}
@@ -96,7 +118,25 @@ public class PowerNode : MonoBehaviour {
 	}
 
 	public void toggle(){
-		on = on ? false : true;
+		if (on) 
+		{
+			if (isActive ()) {
+				ps.releasePower ();
+				connected = false;
+			}
+			on = false;
+		} 
+		else 
+		{
+			on = true;
+			if (parentConnected && ps.hasPower ())
+			{
+				ps.usePower ();
+				connected = true;
+			}
+		}
+		//this.audio.Play ();
+		Debug.Log (""+roomNo+": toggle pressed. on="+on);
 		updateChildren ();
 	}
 	
@@ -130,5 +170,4 @@ public class PowerNode : MonoBehaviour {
 			Gizmos.DrawLine(transform.position, c.transform.position);
 		}
 	}
-
 }
