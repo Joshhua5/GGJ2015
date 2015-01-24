@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Spine;
 using System.Collections;
 using Pathfinding;
 
@@ -24,7 +25,7 @@ public class Agent : MonoBehaviour
         _speed = Random.Range(AISpeed - 20, AISpeed + 20);
         _seeker = GetComponent<Seeker>();
         _controller = GetComponent<CharacterController>();
-        _animation = GetComponentInChildren<SkeletonAnimation>();
+        _animation = GetComponentInChildren<SkeletonAnimation>(); 
     }
 
     public void SetDestination(Vector3 destination)
@@ -65,6 +66,11 @@ public class Agent : MonoBehaviour
         _controller.SimpleMove(dir);
 
         _animationHolder.transform.LookAt(_animationHolder.transform.position + dir);
+
+        if (_path.IsDone())
+            _animation.Stand();
+        else
+            _animation.Walk();
 
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
