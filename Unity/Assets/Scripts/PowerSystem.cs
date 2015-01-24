@@ -4,8 +4,13 @@ using System.Collections.Generic;
 
 public class PowerSystem : MonoBehaviour {
 	public PowerNode root;
+	public int totalPower;
+	public int availablePower;
+
 	// Use this for initialization
 	void Start () {
+		//totalPower = 10;
+		//availablePower = 10;
 		/*TreeNode root = new TreeNode(1,0,0,false);
 		TreeNode a = new TreeNode (2, 0, 0,true);
 		TreeNode b = new TreeNode (3, 0, 0,true);
@@ -25,8 +30,10 @@ public class PowerSystem : MonoBehaviour {
 		a.connect ();
 		Debug.Log (root.ToString ());
 		a.toggle ();*/
+		root.setPowerSystem (this);
+		root.drawLines ();
 		Debug.Log(root.ToString ());
-		root.toggle ();
+		//root.toggle ();
 	}
 	
 	// Update is called once per frame
@@ -34,11 +41,39 @@ public class PowerSystem : MonoBehaviour {
 	
 	}
 
-	//int getTotalCapacity(){}
+	public void updatePowerSpread()
+	{
+		Debug.Log ("update children of root");
+		root.updateChildren ();
+	}
 
-	//int getCurrentUsage(){}
+	public bool usePower(){
+		if (hasPower ()) {
+			availablePower--;
+			Debug.Log ("Use 1 unit. Power remaining = "+availablePower);
+			return true;
+		}
+		return false;
+	}
 
+	public void releasePower(){
+		if (availablePower < totalPower) 
+		{
+			availablePower++;
+			Debug.Log ("Release 1 unit. Power remaining = " + availablePower);
+			if (availablePower == 1) updatePowerSpread ();
+		}
+	}
 
+	int getTotalCapacity(){
+		return totalPower;
+	}
+
+	int getCurrentUsage(){
+		return (totalPower - availablePower);
+	}
+
+	public bool hasPower(){ return availablePower > 0;}
 
 
 }

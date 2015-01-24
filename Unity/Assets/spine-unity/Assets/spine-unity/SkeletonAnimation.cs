@@ -105,4 +105,16 @@ public class SkeletonAnimation : SkeletonRenderer {
 			UpdateComplete(this);
 		}
 	}
+    public void Walk()
+    {
+        state.SetAnimation(0, "walk", true);
+        Update(0);
+    }
+
+    public void Stand()
+    {
+        state.SetAnimation(0, "standing", true);
+        Update(0);
+    }
+
 }

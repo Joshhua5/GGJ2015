@@ -1,0 +1,27 @@
+
+GGJ2015_generator.png
+size: 64,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Base
+  rotate: false
+  xy: 2, 10
+  size: 34, 66
+  orig: 34, 66
+  offset: 0, 0
+  index: -1
+green bar
+  rotate: false
+  xy: 2, 2
+  size: 18, 6
+  orig: 18, 6
+  offset: 0, 0
+  index: -1
+red light
+  rotate: false
+  xy: 38, 65
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1

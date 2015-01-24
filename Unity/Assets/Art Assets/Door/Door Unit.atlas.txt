@@ -1,0 +1,34 @@
+
+Door Unit.png
+size: 512,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+base
+  rotate: false
+  xy: 134, 4
+  size: 67, 16
+  orig: 67, 16
+  offset: 0, 0
+  index: -1
+door a
+  rotate: false
+  xy: 203, 6
+  size: 35, 14
+  orig: 35, 14
+  offset: 0, 0
+  index: -1
+door b
+  rotate: false
+  xy: 240, 6
+  size: 35, 14
+  orig: 35, 14
+  offset: 0, 0
+  index: -1
+wall
+  rotate: false
+  xy: 2, 2
+  size: 130, 18
+  orig: 130, 18
+  offset: 0, 0
+  index: -1

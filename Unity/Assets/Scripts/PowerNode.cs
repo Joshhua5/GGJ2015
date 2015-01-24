@@ -3,15 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PowerNode : MonoBehaviour {
+
 	public List<PowerNode> children;
-	public bool on = false;
+	public bool on = true;
 	public bool connected = true;
 	public bool consumesPower;
 	public int roomNo;
 
+    // Particle Effect
+    public ParticleSystem triggerEffect;
+    private ParticleSystem privateTriggerEffect;
+
+	private PowerSystem ps;
+	public bool parentConnected = true;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start () { 
+        if (triggerEffect != null)
+            privateTriggerEffect = (ParticleSystem)Instantiate(triggerEffect);
 	}
 	
 	// Update is called once per frame
@@ -26,14 +35,23 @@ public class PowerNode : MonoBehaviour {
 
 	//bool consumesEnergy = false; 
 	
-	public PowerNode(int roomNo, bool cp){
+	public PowerNode(int roomNo,bool cp){
 		children = new List<PowerNode> ();
 		this.roomNo = roomNo;
 		consumesPower = cp;
 	}
+
+	public void setPowerSystem(PowerSystem ps){
+		this.ps=ps;
+		//Debug.Log ("connected to power system with " + ps.totalPower);
+		foreach (PowerNode child in children) {
+			child.setPowerSystem (ps);
+		}
+	}
 	
 	public void add(PowerNode child){
 		children.Add (child);
+		Debug.Log ("Child added");
 	}
 	
 	public List<PowerNode> getChildren(){
@@ -48,19 +66,25 @@ public class PowerNode : MonoBehaviour {
 		return total;
 	}
 	
-	public void connect(){
+	public bool connect(){
+		parentConnected = true;
 		if (!connected) {
-			connected = true;
-		}
+			if (ps.hasPower () && on){ 
+				connected = true;
+				ps.usePower();
+			}
+		}return true;
 	}
 	
 	public void disconnect(){
+		parentConnected = false;
 		if (connected) {
+			if (isActive ()) ps.releasePower ();
 			connected = false;
 		}
 	}
 
-	private void updateChildren(){
+	public void updateChildren(){
 		if (isActive ()) connectChildren ();
 		else disconnectChildren ();
 	}
@@ -96,7 +120,28 @@ public class PowerNode : MonoBehaviour {
 	}
 
 	public void toggle(){
-		on = on ? false : true;
+		if (on) 
+		{
+			if (isActive ()) {
+				ps.releasePower ();
+				connected = false;
+			}
+			on = false;
+		} 
+		else 
+		{
+			on = true;
+			if (parentConnected && ps.hasPower ())
+			{
+				ps.usePower ();
+				connected = true;
+			}
+		}
+        if (privateTriggerEffect != null)
+            privateTriggerEffect.Play();
+
+		//this.audio.Play ();
+		//Debug.Log (""+roomNo+": toggle pressed. on="+on);
 		updateChildren ();
 	}
 	
@@ -130,5 +175,26 @@ public class PowerNode : MonoBehaviour {
 			Gizmos.DrawLine(transform.position, c.transform.position);
 		}
 	}
-
+	/*
+	 * public Color c1 = Color.white;
+    public Color c2 = new Color(1, 1, 1, 0);
+    void Start() {
+        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+        lineRenderer.SetColors(c1, c2);
+    }*/
+	public void drawLines(){
+		foreach (PowerNode child in children) 
+		{
+			var go = new GameObject();
+			var lr = go.AddComponent<LineRenderer>();
+			//transform.position, c.transform.position
+			lr.SetPosition(0, transform.position);
+			lr.SetPosition(1, child.transform.position);
+			lr.material = new Material(Shader.Find ("Particles/Additive"));
+			lr.SetColors (Color.white,Color.black);
+			lr.SetWidth (0.5f,0.2f);
+			child.drawLines ();
+		}
+	}
 }
