@@ -14,7 +14,6 @@ public class DoorController : MonoBehaviour
     void OnDoorToggleClicked()
     {
         Door[] doors = GameObject.FindObjectsOfType<Door>();
-        Debug.Log("Searching for doors, found " + doors.Length);
         foreach(var door in doors)
         {
             door.SetState(!door.Open);
