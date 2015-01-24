@@ -82,7 +82,7 @@ public class PowerNode : MonoBehaviour {
 		}
 	}
 
-	private void updateChildren(){
+	public void updateChildren(){
 		if (isActive ()) connectChildren ();
 		else disconnectChildren ();
 	}
@@ -136,7 +136,7 @@ public class PowerNode : MonoBehaviour {
 			}
 		}
 		//this.audio.Play ();
-		Debug.Log (""+roomNo+": toggle pressed. on="+on);
+		//Debug.Log (""+roomNo+": toggle pressed. on="+on);
 		updateChildren ();
 	}
 	

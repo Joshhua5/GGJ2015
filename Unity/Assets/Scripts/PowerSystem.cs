@@ -40,6 +40,12 @@ public class PowerSystem : MonoBehaviour {
 	
 	}
 
+	public void updatePowerSpread()
+	{
+		Debug.Log ("update children of root");
+		root.updateChildren ();
+	}
+
 	public bool usePower(){
 		if (hasPower ()) {
 			availablePower--;
@@ -50,8 +56,12 @@ public class PowerSystem : MonoBehaviour {
 	}
 
 	public void releasePower(){
-		if (availablePower < totalPower) availablePower++;
-		Debug.Log ("Release 1 unit. Power remaining = " + availablePower);
+		if (availablePower < totalPower) 
+		{
+			availablePower++;
+			Debug.Log ("Release 1 unit. Power remaining = " + availablePower);
+			updatePowerSpread ();
+		}
 	}
 
 	int getTotalCapacity(){
