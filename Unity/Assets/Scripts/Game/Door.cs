@@ -7,6 +7,9 @@ public class Door : MonoBehaviour
 {
     public bool Open { get; private set; }
 
+    [SerializeField]
+    private uint chargeTime = 5;
+
     private float charge;
     private Room room;
     private SkeletonAnimation _animation;
@@ -62,7 +65,7 @@ public class Door : MonoBehaviour
             charge += Time.deltaTime; 
         else if(charge > 0)
             charge -= Time.deltaTime;
-        if (charge >= 5)
+        if (charge >= chargeTime)
         {
             charging = false;
             if(room.HasPower())
