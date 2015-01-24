@@ -98,10 +98,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 381418162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5007e53b9a6c7684880d6551366be22e, type: 3}
+  m_Script: {fileID: 11500000, guid: c601165dbb8fc46408832d7f00366860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  root: {fileID: 0}
+  root: {fileID: 1847044416}
 --- !u!4 &381418164
 Transform:
   m_ObjectHideFlags: 0
@@ -222,10 +222,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1847044415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5007e53b9a6c7684880d6551366be22e, type: 3}
+  m_Script: {fileID: 11500000, guid: eccc9a8e5759c1342a1377d64ae4a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  root: {fileID: 0}
+  children: []
+  on: 0
+  connected: 0
+  consumesPower: 0
+  roomNo: 0
+  x: 0
+  y: 0
 --- !u!4 &1847044417
 Transform:
   m_ObjectHideFlags: 0

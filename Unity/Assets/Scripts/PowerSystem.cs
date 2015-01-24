@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class PowerSystem : MonoBehaviour {
 	public PowerNode root;
 	// Use this for initialization
 	void Start () {
