@@ -7,16 +7,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{164A416E-423A-6066-5BD1-6E559E316DD4}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>4.6.1f1</UnityVersion>
@@ -59,6 +57,9 @@
     </Reference>
     <Reference Include="Pathfinding.JsonFx">
       <HintPath>Assets\3rdParty\AstarPathfindingProject\Plugins\JsonFx\Pathfinding.JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-UnityScript-firstpass">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -133,12 +134,68 @@
     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
     <Compile Include="Assets\3rdParty\AstarPathfindingProject\changelog.cs" />
+    <Compile Include="Assets\Particles\Water.cs" />
+    <Compile Include="Assets\Particles\WaterSpawner.cs" />
     <Compile Include="Assets\Scripts\AI\Agent.cs" />
     <Compile Include="Assets\Scripts\AI\Door.cs" />
     <Compile Include="Assets\Scripts\AI\DoorController.cs" />
     <Compile Include="Assets\Scripts\AI\Navigator.cs" />
+    <Compile Include="Assets\Scripts\PowerNode.cs" />
+    <Compile Include="Assets\Scripts\PowerSystem.cs" />
     <Compile Include="Assets\Scripts\Utilities\MonoSingleton.cs" />
     <Compile Include="Assets\Scripts\Utilities\StateMachine.cs" />
+    <Compile Include="Assets\spine-csharp\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\spine-csharp\src\Animation.cs" />
+    <Compile Include="Assets\spine-csharp\src\AnimationState.cs" />
+    <Compile Include="Assets\spine-csharp\src\AnimationStateData.cs" />
+    <Compile Include="Assets\spine-csharp\src\Atlas.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\AtlasAttachmentLoader.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\Attachment.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\AttachmentLoader.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\AttachmentType.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\BoundingBoxAttachment.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\MeshAttachment.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\RegionAttachment.cs" />
+    <Compile Include="Assets\spine-csharp\src\Attachments\SkinnedMeshAttachment.cs" />
+    <Compile Include="Assets\spine-csharp\src\Bone.cs" />
+    <Compile Include="Assets\spine-csharp\src\BoneData.cs" />
+    <Compile Include="Assets\spine-csharp\src\Event.cs" />
+    <Compile Include="Assets\spine-csharp\src\EventData.cs" />
+    <Compile Include="Assets\spine-csharp\src\IkConstraint.cs" />
+    <Compile Include="Assets\spine-csharp\src\IkConstraintData.cs" />
+    <Compile Include="Assets\spine-csharp\src\Json.cs" />
+    <Compile Include="Assets\spine-csharp\src\Skeleton.cs" />
+    <Compile Include="Assets\spine-csharp\src\SkeletonBounds.cs" />
+    <Compile Include="Assets\spine-csharp\src\SkeletonData.cs" />
+    <Compile Include="Assets\spine-csharp\src\SkeletonJson.cs" />
+    <Compile Include="Assets\spine-csharp\src\Skin.cs" />
+    <Compile Include="Assets\spine-csharp\src\Slot.cs" />
+    <Compile Include="Assets\spine-csharp\src\SlotData.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\BasicPlatformerController.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\Chimera.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\ConstrainedCamera.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\DynamicSpineBone.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\FootSoldierExample.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\Goblins.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\Raptor.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\Spineboy.cs" />
+    <Compile Include="Assets\spine-unity\Assets\Examples\Scripts\SpineboyController.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\AtlasAsset.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\AtlasRegionAttacher.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\BoneFollower.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\CustomSkin.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonAnimation.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonDataAsset.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonExtensions.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonRenderer.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\SkeletonUtility.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\SkeletonUtilityBone.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\SkeletonUtilityConstraint.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\SkeletonUtilityEyeConstraint.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\SkeletonUtilityGroundConstraint.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\SkeletonUtilityKinematicShadow.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\SkeletonUtilitySubmeshRenderer.cs" />
+    <Compile Include="Assets\spine-unity\Assets\spine-unity\SpineAttributes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3rdParty\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
@@ -153,6 +210,24 @@
     <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme.txt" />
     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme_upgrading.txt" />
+    <None Include="Assets\Spines\Person\Person-01.atlas.txt" />
+    <None Include="Assets\Spines\Person\skeleton.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\dragon.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\license.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Eyes\eyes.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\Equipment\Equipment.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\FS_White.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\license.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Goblins\goblins-mesh.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Hero\Hero.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Hero\license.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Raptor\raptor.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\Examples\Spine\Spineboy\spineboy.atlas.txt" />
+    <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\Bones.shader" />
+    <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\HiddenPass.shader" />
+    <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\Skeleton.shader" />
+    <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\SkeletonLit.shader" />
+    <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

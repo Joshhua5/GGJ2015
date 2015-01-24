@@ -1,0 +1,62 @@
+
+Person-01.png
+size: 64,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+head
+  rotate: false
+  xy: 2, 2
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+left arm
+  rotate: false
+  xy: 21, 5
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
+right arm
+  rotate: false
+  xy: 21, 5
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
+left foot
+  rotate: false
+  xy: 41, 19
+  size: 8, 10
+  orig: 8, 10
+  offset: 0, 0
+  index: -1
+right foot
+  rotate: false
+  xy: 41, 19
+  size: 8, 10
+  orig: 8, 10
+  offset: 0, 0
+  index: -1
+left leg
+  rotate: false
+  xy: 31, 15
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
+right leg
+  rotate: false
+  xy: 31, 15
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
+shoulders
+  rotate: false
+  xy: 2, 21
+  size: 27, 8
+  orig: 27, 8
+  offset: 0, 0
+  index: -1
