@@ -9,8 +9,6 @@ public class PowerNode : MonoBehaviour {
 	public bool connected = true;
 	public bool consumesPower;
 	public int roomNo;
-	public float x;
-	public float y;
 
 	private PowerSystem ps;
 	public bool parentConnected = true;
@@ -32,11 +30,9 @@ public class PowerNode : MonoBehaviour {
 
 	//bool consumesEnergy = false; 
 	
-	public PowerNode(int roomNo,float x, float y,bool cp){
+	public PowerNode(int roomNo,bool cp){
 		children = new List<PowerNode> ();
 		this.roomNo = roomNo;
-		this.x=x;
-		this.y=y;
 		consumesPower = cp;
 	}
 
