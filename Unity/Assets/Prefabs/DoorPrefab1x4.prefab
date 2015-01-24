@@ -28,6 +28,7 @@ GameObject:
   - 4: {fileID: 474674}
   - 33: {fileID: 3374674}
   - 65: {fileID: 6574674}
+  - 114: {fileID: 11463522}
   m_Layer: 0
   m_Name: DoorPrefab1x4
   m_TagString: Untagged
@@ -42,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142340}
   m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: .51700002, y: -.497000009, z: -1}
-  m_LocalScale: {x: .769999981, y: 5.53999996, z: 1}
+  m_LocalPosition: {x: .647000015, y: -.499000013, z: 0}
+  m_LocalScale: {x: .75999999, y: 7.15999985, z: 1}
   m_Children: []
   m_Father: {fileID: 474674}
   m_RootOrder: 0
@@ -53,9 +54,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174674}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: 792, y: 416.000122, z: -0}
-  m_LocalScale: {x: 16, y: 64.0000458, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 320, y: 360, z: 1}
+  m_LocalScale: {x: 16, y: 128, z: 1}
   m_Children:
   - {fileID: 442340}
   m_Father: {fileID: 0}
@@ -72,7 +73,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4abfaf8df7bbc32439a4d5b851782c6b, type: 2}
+  - {fileID: 2100000, guid: 0f27fb80c22abd34dbdbb923e65c89a6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 0ad8e0d17c0080c42a2ac9115b67abf9, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 4b0d657f80d8fb249931f460ea21dbce, type: 2}
   initialSkinName: default
   calculateNormals: 0
   calculateTangents: 0
@@ -129,6 +130,17 @@ MonoBehaviour:
   timeScale: 1
   loop: 0
   _animationName: open
+--- !u!114 &11463522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b344a802e01d64589bae21a5fa4754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

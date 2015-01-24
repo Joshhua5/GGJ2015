@@ -40,7 +40,7 @@ public class Door : MonoBehaviour
 
         _animation.Update();
         
-        AstarPath.active.UpdateGraphs(guo);
+        //AstarPath.active.UpdateGraphs(guo);
     }
 
     void OnMouseDown() {
