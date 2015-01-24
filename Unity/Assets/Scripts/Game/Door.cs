@@ -1,22 +1,27 @@
 ﻿using Pathfinding;
 using UnityEngine;
 using Spine;
+using System.Collections;
 
 public class Door : MonoBehaviour
 {
     public bool Open { get; private set; }
-    private SkeletonAnimation _animation;
-    
 
+    private float charge;
+    private Room room;
+    private SkeletonAnimation _animation;
+    private bool charging;
     Bounds bounds;
 
     public void Start()
     {
         _animation = GetComponentInChildren<SkeletonAnimation>();
-
+        room = GetComponentInParent<Room>();
         Open = false;
         bounds = collider.bounds;
         SetState(Open);
+
+        charging = false;
     }
 
     public void SetState(bool open)
@@ -38,9 +43,30 @@ public class Door : MonoBehaviour
         AstarPath.active.UpdateGraphs(guo);
     }
 
+    void OnMouseDown() {
+        if (room.HasPower())
+            if (Open || charging)
+            {
+                charging = false;
+                SetState(false);
+            }
+            else
+                charging = true;
+        // Possible responce such as a red light if the door fails.
+    } 
+
     // Update is called once per frame
     void Update()
     {
-
-    }
+        if (charging) 
+            charge += Time.deltaTime; 
+        else if(charge > 0)
+            charge -= Time.deltaTime;
+        if (charge >= 5)
+        {
+            charging = false;
+            if(room.HasPower())
+               SetState(true);
+        }
+    } 
 }

@@ -38,7 +38,7 @@ public class PowerNode : MonoBehaviour {
 	}
 
 	//bool consumesEnergy = false; 
-	
+
 	public PowerNode(int roomNo,bool cp){
 		children = new List<PowerNode> ();
 		this.roomNo = roomNo;
