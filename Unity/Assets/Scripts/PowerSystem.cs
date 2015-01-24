@@ -26,6 +26,7 @@ public class PowerSystem : MonoBehaviour {
 		Debug.Log (root.ToString ());
 		a.toggle ();*/
 		Debug.Log(root.ToString ());
+		root.toggle ();
 	}
 	
 	// Update is called once per frame

@@ -8,8 +8,6 @@ public class PowerNode : MonoBehaviour {
 	public bool connected = true;
 	public bool consumesPower;
 	public int roomNo;
-	public float x;
-	public float y;
 
 	// Use this for initialization
 	void Start () {
@@ -18,16 +16,19 @@ public class PowerNode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (isActive ()) this.renderer.material.color = Color.green;
+		else this.renderer.material.color = Color.blue;
+	}
+
+	void OnMouseDown(){
+		toggle ();
 	}
 
 	//bool consumesEnergy = false; 
 	
-	public PowerNode(int roomNo,float x, float y,bool cp){
+	public PowerNode(int roomNo, bool cp){
 		children = new List<PowerNode> ();
 		this.roomNo = roomNo;
-		this.x=x;
-		this.y=y;
 		consumesPower = cp;
 	}
 	
@@ -50,24 +51,50 @@ public class PowerNode : MonoBehaviour {
 	public void connect(){
 		if (!connected) {
 			connected = true;
-			updateChildren ();
 		}
 	}
 	
 	public void disconnect(){
 		if (connected) {
 			connected = false;
-			updateChildren ();
 		}
 	}
-	
+
 	private void updateChildren(){
-		foreach (PowerNode child in children) {
-			if (isActive ()) child.connect ();
-			else child.disconnect ();
+		if (isActive ()) connectChildren ();
+		else disconnectChildren ();
+	}
+
+	private void disconnectChildren(){
+		Queue<PowerNode> toVisit = new Queue<PowerNode>();
+		addAll (toVisit, children);
+		while (toVisit.Count > 0) {
+			PowerNode child = toVisit.Dequeue();
+			child.disconnect ();
+			if (!child.isActive ()){
+				addAll(toVisit, child.getChildren());
+			}
 		}
 	}
-	
+
+	private void addAll(Queue<PowerNode> q,List<PowerNode> vals){
+		foreach (PowerNode v in vals) {
+			q.Enqueue (v);
+		}
+	}
+
+	private void connectChildren(){
+		Queue<PowerNode> toVisit = new Queue<PowerNode>();
+		addAll (toVisit, children);
+		while (toVisit.Count > 0) {
+			PowerNode child = toVisit.Dequeue();
+			child.connect ();
+			if (child.isActive ()){
+				addAll(toVisit, child.getChildren());
+			}
+		}
+	}
+
 	public void toggle(){
 		on = on ? false : true;
 		updateChildren ();
@@ -103,4 +130,5 @@ public class PowerNode : MonoBehaviour {
 			Gizmos.DrawLine(transform.position, c.transform.position);
 		}
 	}
+
 }
