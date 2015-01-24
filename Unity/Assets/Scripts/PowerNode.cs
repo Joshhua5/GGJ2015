@@ -8,8 +8,6 @@ public class PowerNode : MonoBehaviour {
 	public bool connected = true;
 	public bool consumesPower;
 	public int roomNo;
-	public float x;
-	public float y;
 
 	// Use this for initialization
 	void Start () {
@@ -18,16 +16,20 @@ public class PowerNode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (isActive ()) this.renderer.material.color = Color.green;
+		else this.renderer.material.color = Color.blue;
+	}
+
+	void OnMouseDown(){
+		Debug.Log ("Mouse has been clicked");
+		toggle ();
 	}
 
 	//bool consumesEnergy = false; 
 	
-	public PowerNode(int roomNo,float x, float y,bool cp){
+	public PowerNode(int roomNo, bool cp){
 		children = new List<PowerNode> ();
 		this.roomNo = roomNo;
-		this.x=x;
-		this.y=y;
 		consumesPower = cp;
 	}
 	
@@ -96,4 +98,12 @@ public class PowerNode : MonoBehaviour {
 		}
 		return s;
 	}
+
+	void OnDrawGizmos() {
+		Gizmos.color = Color.yellow;
+		foreach (PowerNode c in children) {
+			Gizmos.DrawLine(transform.position, c.transform.position);
+		}
+	}
+
 }

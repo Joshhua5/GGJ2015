@@ -46,6 +46,20 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\AnimationLinkEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\AstarPathEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\AstarUpdateWindow.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\EditorGUIx.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\EditorUtilities.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\GraphEditors\GraphEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\GraphEditors\GridGeneratorEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\GraphEditors\NavMeshGeneratorEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\GraphEditors\PointGeneratorEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\GraphUpdateSceneEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\Misc\AstarEnumFlagDrawer.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\ModifierEditors\RaycastModifierEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\ModifierEditors\SmoothModifierEditor.cs" />
+     <Compile Include="Assets\3rdParty\AstarPathfindingProject\Editor\SeekerEditor.cs" />
      <Compile Include="Assets\spine-unity\Assets\spine-unity\Editor\AtlasAssetInspector.cs" />
      <Compile Include="Assets\spine-unity\Assets\spine-unity\Editor\BoneFollowerInspector.cs" />
      <Compile Include="Assets\spine-unity\Assets\spine-unity\Editor\Menus.cs" />
@@ -58,24 +72,36 @@
      <Compile Include="Assets\spine-unity\Assets\spine-unity\SkeletonUtility\Editor\SkeletonUtilityInspector.cs" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Eyes\eyes.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\HiddenPass.shader" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\FS_White.atlas.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\license.txt" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Hero\license.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Raptor\raptor.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Spineboy\spineboy.atlas.txt" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\dependencies.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\license.txt" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
      <None Include="Assets\Spines\Person\skeleton.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\Bones.shader" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme_upgrading.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Hero\Hero.atlas.txt" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\dragon.atlas.txt" />
      <None Include="Assets\Spines\Person\Person-01.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\Skeleton.shader" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Goblins\goblins-mesh.atlas.txt" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\SkeletonLit.shader" />
+     <None Include="Assets\3rdParty\AstarPathfindingProject\link.xml" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\Equipment\Equipment.atlas.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Joshua/Documents/GitHub/GGJ2015/Unity/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
@@ -84,16 +110,22 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
- <HintPath>C:/Users/Joshua/Documents/GitHub/GGJ2015/Unity/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
- <HintPath>C:/Users/Joshua/Documents/GitHub/GGJ2015/Unity/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+ <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
  </Reference>
  <Reference Include="UnityVS.VersionSpecific">
- <HintPath>C:/Users/Joshua/Documents/GitHub/GGJ2015/Unity/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
+ <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
