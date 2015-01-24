@@ -125,7 +125,10 @@
      <Compile Include="Assets\Scripts\AI\RoomController.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Destination.cs" />
+     <Compile Include="Assets\Scripts\Game\Despawner.cs" />
      <Compile Include="Assets\Scripts\Game\Door.cs" />
+     <Compile Include="Assets\Scripts\Game\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Game\PrefabManager.cs" />
      <Compile Include="Assets\Scripts\Game\Room.cs" />
      <Compile Include="Assets\Scripts\PowerSystem\PowerNode.cs" />
      <Compile Include="Assets\Scripts\PowerSystem\PowerSystem.cs" />
@@ -227,11 +230,11 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Pathfinding.JsonFx">
- <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
- </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
  <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

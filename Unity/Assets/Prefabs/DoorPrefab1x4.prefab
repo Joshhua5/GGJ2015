@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3342340}
   - 23: {fileID: 2342340}
   - 114: {fileID: 11442340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New SkeletonAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,12 +29,12 @@ GameObject:
   - 33: {fileID: 3374674}
   - 65: {fileID: 6574674}
   - 114: {fileID: 11463522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorPrefab1x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &442340
 Transform:
@@ -54,9 +54,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 320, y: 360, z: 1}
-  m_LocalScale: {x: 16, y: 128, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+  m_LocalPosition: {x: 120, y: 496, z: 0}
+  m_LocalScale: {x: 16, y: 128, z: 10}
   m_Children:
   - {fileID: 442340}
   m_Father: {fileID: 0}
@@ -105,7 +105,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: .5, z: .5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11442340
 MonoBehaviour:
@@ -129,7 +129,7 @@ MonoBehaviour:
   submeshSeparators: []
   timeScale: 1
   loop: 0
-  _animationName: open
+  _animationName: Close
 --- !u!114 &11463522
 MonoBehaviour:
   m_ObjectHideFlags: 1

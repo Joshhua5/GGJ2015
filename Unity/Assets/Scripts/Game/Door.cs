@@ -42,8 +42,9 @@ public class Door : MonoBehaviour
             _animation.state.SetAnimation(0, "Close", false);
 
         _animation.Update();
-        
-        //AstarPath.active.UpdateGraphs(guo);
+
+        Debug.Log("Door: " + open);
+        AstarPath.active.UpdateGraphs(guo);
     }
 
     void OnMouseDown() {
