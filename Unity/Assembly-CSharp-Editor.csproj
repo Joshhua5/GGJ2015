@@ -65,9 +65,11 @@
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Raptor\raptor.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Spineboy\spineboy.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\license.txt" />
+     <None Include="Assets\Spines\Person\skeleton.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\Bones.shader" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Hero\Hero.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\dragon.atlas.txt" />
+     <None Include="Assets\Spines\Person\Person-01.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\Skeleton.shader" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Goblins\goblins-mesh.atlas.txt" />
      <None Include="Assets\spine-unity\Assets\spine-unity\Shaders\SkeletonLit.shader" />

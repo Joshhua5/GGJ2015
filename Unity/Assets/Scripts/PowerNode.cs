@@ -96,4 +96,11 @@ public class PowerNode : MonoBehaviour {
 		}
 		return s;
 	}
+
+	void OnDrawGizmos() {
+		Gizmos.color = Color.yellow;
+		foreach (PowerNode c in children) {
+			Gizmos.DrawLine(transform.position, c.transform.position);
+		}
+	}
 }
