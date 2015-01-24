@@ -1,0 +1,48 @@
+
+Exit Arrow.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arrow off
+  rotate: false
+  xy: 199, 2
+  size: 24, 34
+  orig: 24, 34
+  offset: 0, 0
+  index: -1
+arrow on
+  rotate: false
+  xy: 225, 2
+  size: 24, 34
+  orig: 24, 34
+  offset: 0, 0
+  index: -1
+arrow-half
+  rotate: false
+  xy: 251, 2
+  size: 24, 34
+  orig: 24, 34
+  offset: 0, 0
+  index: -1
+arrows
+  rotate: false
+  xy: 70, 2
+  size: 63, 34
+  orig: 63, 34
+  offset: 0, 0
+  index: -1
+arrows dark
+  rotate: false
+  xy: 135, 2
+  size: 62, 34
+  orig: 62, 34
+  offset: 0, 0
+  index: -1
+arrows dark copy
+  rotate: false
+  xy: 2, 2
+  size: 66, 34
+  orig: 66, 34
+  offset: 0, 0
+  index: -1
