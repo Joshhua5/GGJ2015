@@ -9,13 +9,19 @@ public class PowerNode : MonoBehaviour {
 	public bool connected = true;
 	public bool consumesPower;
 	public int roomNo;
+	public Material materialOn;
+	public Material materialOff;
+	public bool parentConnected = true;
 
     // Particle Effect
     public ParticleSystem triggerEffect;
     private ParticleSystem _triggerEffect;
 
 	private PowerSystem ps;
-	public bool parentConnected = true;
+	private LineRenderer lineIn = null;
+
+	private static Color _lineOn = new Color(0,237,214);
+	private static Color _lineOff = Color.gray;
 
 	// Use this for initialization
 	void Start () {
@@ -26,18 +32,34 @@ public class PowerNode : MonoBehaviour {
             _triggerEffect.transform.position = this.transform.position;
         }
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
-		if (isActive ()) this.renderer.material.color = Color.green;
-		else this.renderer.material.color = Color.blue;
+		if (isActive ()) {
+						setOnTexture ();
+						lineOn ();
+		} 
+		else 
+		{
+				setOffTexture ();
+				lineOff ();
+		}
 	}
 
+	private void setOffTexture()
+	{
+		renderer.material = materialOff;
+	}
+
+	private void setOnTexture()
+	{
+		renderer.material = materialOn;
+	}
+	
 	void OnMouseDown(){
 		toggle ();
 	}
-
-	//bool consumesEnergy = false; 
 
 	public PowerNode(int roomNo,bool cp){
 		children = new List<PowerNode> ();
@@ -47,7 +69,6 @@ public class PowerNode : MonoBehaviour {
 
 	public void setPowerSystem(PowerSystem ps){
 		this.ps=ps;
-		//Debug.Log ("connected to power system with " + ps.totalPower);
 		foreach (PowerNode child in children) {
 			child.setPowerSystem (ps);
 		}
@@ -55,7 +76,6 @@ public class PowerNode : MonoBehaviour {
 	
 	public void add(PowerNode child){
 		children.Add (child);
-		Debug.Log ("Child added");
 	}
 	
 	public List<PowerNode> getChildren(){
@@ -181,14 +201,24 @@ public class PowerNode : MonoBehaviour {
 			Gizmos.DrawLine(transform.position, c.transform.position);
 		}
 	}
-	/*
-	 * public Color c1 = Color.white;
-    public Color c2 = new Color(1, 1, 1, 0);
-    void Start() {
-        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-        lineRenderer.SetColors(c1, c2);
-    }*/
+
+	public void setLineIn(LineRenderer line)
+	{
+		this.lineIn = line;
+	}
+
+	private void lineOn(){
+		if (lineIn != null) {
+			Debug.Log ("switch line on");
+						lineIn.SetColors (_lineOn, _lineOn);
+
+				}
+	}
+
+	private void lineOff(){
+		if (lineIn != null) lineIn.SetColors (_lineOff, _lineOff);
+	}
+
 	public void drawLines(){
 		foreach (PowerNode child in children) 
 		{
@@ -198,8 +228,10 @@ public class PowerNode : MonoBehaviour {
 			lr.SetPosition(0, transform.position);
 			lr.SetPosition(1, child.transform.position);
 			lr.material = new Material(Shader.Find ("Particles/Additive"));
-			lr.SetColors (Color.white,Color.black);
-			lr.SetWidth (7.0f,5f);
+			if (isActive () && child.isActive ()) lr.SetColors (_lineOn,_lineOn);
+			else lr.SetColors (_lineOff,_lineOff);
+			lr.SetWidth (3.0f,3f);
+			child.setLineIn (lr);
 			child.drawLines ();
 		}
 	}
