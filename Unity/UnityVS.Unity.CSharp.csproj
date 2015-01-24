@@ -137,11 +137,16 @@
     <Compile Include="Assets\Particles\Water.cs" />
     <Compile Include="Assets\Particles\WaterSpawner.cs" />
     <Compile Include="Assets\Scripts\AI\Agent.cs" />
-    <Compile Include="Assets\Scripts\AI\Door.cs" />
     <Compile Include="Assets\Scripts\AI\DoorController.cs" />
     <Compile Include="Assets\Scripts\AI\Navigator.cs" />
+    <Compile Include="Assets\Scripts\AI\RoomController.cs" />
+    <Compile Include="Assets\Scripts\Destination.cs" />
+    <Compile Include="Assets\Scripts\Game\Door.cs" />
+    <Compile Include="Assets\Scripts\Game\Room.cs" />
     <Compile Include="Assets\Scripts\PowerNode.cs" />
     <Compile Include="Assets\Scripts\PowerSystem.cs" />
+    <Compile Include="Assets\Scripts\UI\Play.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Layers.cs" />
     <Compile Include="Assets\Scripts\Utilities\MonoSingleton.cs" />
     <Compile Include="Assets\Scripts\Utilities\StateMachine.cs" />
     <Compile Include="Assets\spine-csharp\Properties\AssemblyInfo.cs" />
@@ -212,6 +217,7 @@
     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme_upgrading.txt" />
     <None Include="Assets\Spines\Person\Person-01.atlas.txt" />
     <None Include="Assets\Spines\Person\skeleton.atlas.txt" />
+    <None Include="Assets\Spines\Personv2\Person-size.atlas.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\dragon.atlas.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\license.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Eyes\eyes.atlas.txt" />

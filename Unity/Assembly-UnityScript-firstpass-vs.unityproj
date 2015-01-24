@@ -52,6 +52,7 @@
      <None Include="Assets\3rdParty\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
      <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\FS_White.atlas.txt" />
+     <None Include="Assets\Spines\Personv2\Person-size.atlas.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\license.txt" />
      <None Include="Assets\3rdParty\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
@@ -80,11 +81,11 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Pathfinding.JsonFx">
- <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
- </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/Users/grumm_000/Documents/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>C:/Users/Joshua/Documents/GitHub/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/Joshua/Documents/GitHub/GGJ2015/Unity/Assets/3rdParty/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

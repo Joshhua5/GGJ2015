@@ -3,8 +3,6 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Obstacle
-  - Walkable
   - Fire
   - 
   Builtin Layer 0: Default
