@@ -72,9 +72,11 @@ MonoBehaviour:
   children: []
   on: 0
   connected: 0
-  consumesPower: 0
+  consumesPower: 1
   roomNo: 0
-  triggerEffect: {fileID: 0}
+  materialOn: {fileID: 2100000, guid: b7c9bb1a758c99f4a9d03d16f2ff7212, type: 2}
+  materialOff: {fileID: 2100000, guid: d0d0e271d19d4c6478501e7e83913ec5, type: 2}
+  triggerEffect: {fileID: 19885720, guid: faedcf9516c43bd46b9867b204dd80cd, type: 2}
   parentConnected: 0
 --- !u!143 &14332320
 CharacterController:
