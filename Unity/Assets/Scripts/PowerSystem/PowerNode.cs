@@ -36,14 +36,19 @@ public class PowerNode : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+	}
+
+	private void updateDisplay()
+	{
 		if (isActive ()) {
-						setOnTexture ();
-						lineOn ();
+			setOnTexture ();
+			lineOn ();
 		} 
 		else 
 		{
-				setOffTexture ();
-				lineOff ();
+			setOffTexture ();
+			lineOff ();
 		}
 	}
 
@@ -96,6 +101,7 @@ public class PowerNode : MonoBehaviour {
 			if (ps.hasPower () && on){ 
 				connected = true;
 				ps.usePower();
+				updateDisplay();
 			}
 		}return true;
 	}
@@ -105,6 +111,7 @@ public class PowerNode : MonoBehaviour {
 		if (connected) {
 			if (isActive ()) ps.releasePower ();
 			connected = false;
+			updateDisplay();
 		}
 	}
 
@@ -165,9 +172,7 @@ public class PowerNode : MonoBehaviour {
 				connected = true;
 			}
 		}
-
-		//this.audio.Play ();
-		//Debug.Log (""+roomNo+": toggle pressed. on="+on);
+		updateDisplay ();
 		updateChildren ();
 	}
 	
@@ -209,10 +214,9 @@ public class PowerNode : MonoBehaviour {
 
 	private void lineOn(){
 		if (lineIn != null) {
-			Debug.Log ("switch line on");
-						lineIn.SetColors (_lineOn, _lineOn);
-
-				}
+			//Debug.Log ("switch line on");
+			lineIn.SetColors (_lineOn, _lineOn);
+		}
 	}
 
 	private void lineOff(){
