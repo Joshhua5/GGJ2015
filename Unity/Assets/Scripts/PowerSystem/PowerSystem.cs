@@ -32,7 +32,7 @@ public class PowerSystem : MonoBehaviour {
 		a.toggle ();*/
 		root.setPowerSystem (this);
 		root.drawLines ();
-		Debug.Log(root.ToString ());
+		//Debug.Log(root.ToString ());
 		//root.toggle ();
 	}
 	
@@ -43,14 +43,14 @@ public class PowerSystem : MonoBehaviour {
 
 	public void updatePowerSpread()
 	{
-		Debug.Log ("update children of root");
+		//Debug.Log ("update children of root");
 		root.updateChildren ();
 	}
 
 	public bool usePower(){
 		if (hasPower ()) {
 			availablePower--;
-			Debug.Log ("Use 1 unit. Power remaining = "+availablePower);
+			//Debug.Log ("Use 1 unit. Power remaining = "+availablePower);
 			return true;
 		}
 		return false;
@@ -60,7 +60,7 @@ public class PowerSystem : MonoBehaviour {
 		if (availablePower < totalPower) 
 		{
 			availablePower++;
-			Debug.Log ("Release 1 unit. Power remaining = " + availablePower);
+			//Debug.Log ("Release 1 unit. Power remaining = " + availablePower);
 			if (availablePower == 1) updatePowerSpread ();
 		}
 	}
