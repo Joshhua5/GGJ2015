@@ -19,6 +19,8 @@ public class Room : MonoBehaviour
         }
     }
 
+    public bool HasPower() { return powerNode.isActive(); }
+
     public Door FirstDoor
     {
         get
