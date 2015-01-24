@@ -124,6 +124,7 @@
     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme_upgrading.txt" />
     <None Include="Assets\Spines\Person\Person-01.atlas.txt" />
     <None Include="Assets\Spines\Person\skeleton.atlas.txt" />
+    <None Include="Assets\Spines\Personv2\Person-size.atlas.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\dragon.atlas.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\license.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Eyes\eyes.atlas.txt" />

@@ -7,16 +7,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{164A416E-423A-6066-5BD1-6E559E316DD4}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>4.6.1f1</UnityVersion>
@@ -139,13 +137,15 @@
     <Compile Include="Assets\Particles\Water.cs" />
     <Compile Include="Assets\Particles\WaterSpawner.cs" />
     <Compile Include="Assets\Scripts\AI\Agent.cs" />
-    <Compile Include="Assets\Scripts\Game\Door.cs" />
     <Compile Include="Assets\Scripts\AI\DoorController.cs" />
     <Compile Include="Assets\Scripts\AI\Navigator.cs" />
     <Compile Include="Assets\Scripts\AI\RoomController.cs" />
+    <Compile Include="Assets\Scripts\Destination.cs" />
+    <Compile Include="Assets\Scripts\Game\Door.cs" />
     <Compile Include="Assets\Scripts\Game\Room.cs" />
     <Compile Include="Assets\Scripts\PowerNode.cs" />
     <Compile Include="Assets\Scripts\PowerSystem.cs" />
+    <Compile Include="Assets\Scripts\UI\Play.cs" />
     <Compile Include="Assets\Scripts\Utilities\Layers.cs" />
     <Compile Include="Assets\Scripts\Utilities\MonoSingleton.cs" />
     <Compile Include="Assets\Scripts\Utilities\StateMachine.cs" />
@@ -217,6 +217,7 @@
     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme_upgrading.txt" />
     <None Include="Assets\Spines\Person\Person-01.atlas.txt" />
     <None Include="Assets\Spines\Person\skeleton.atlas.txt" />
+    <None Include="Assets\Spines\Personv2\Person-size.atlas.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\dragon.atlas.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\license.txt" />
     <None Include="Assets\spine-unity\Assets\Examples\Spine\Eyes\eyes.atlas.txt" />

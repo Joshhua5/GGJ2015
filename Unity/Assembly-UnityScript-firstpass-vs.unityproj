@@ -52,6 +52,7 @@
      <None Include="Assets\3rdParty\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
      <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\FootSoldier\FS_White.atlas.txt" />
+     <None Include="Assets\Spines\Personv2\Person-size.atlas.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\spine-unity\Assets\Examples\Spine\Dragon\license.txt" />
      <None Include="Assets\3rdParty\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
