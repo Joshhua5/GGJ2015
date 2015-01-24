@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &111186
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 411186}
-  - 33: {fileID: 3311186}
-  - 23: {fileID: 2311186}
-  - 114: {fileID: 11411186}
-  m_Layer: 0
-  m_Name: New SkeletonRenderer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &171038
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +14,6 @@ GameObject:
   - 114: {fileID: 11471042}
   - 114: {fileID: 11471038}
   - 143: {fileID: 14371038}
-  - 114: {fileID: 11476674}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -40,18 +21,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &411186
-Transform:
+--- !u!1 &176408
+GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111186}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 471038}
-  m_RootOrder: 0
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 476408}
+  - 33: {fileID: 3376408}
+  - 23: {fileID: 2376408}
+  - 114: {fileID: 11476408}
+  m_Layer: 0
+  m_Name: New SkeletonAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &192138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 492138}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &471038
 Transform:
   m_ObjectHideFlags: 1
@@ -62,15 +64,40 @@ Transform:
   m_LocalPosition: {x: -212, y: 16.7000008, z: -20}
   m_LocalScale: {x: 32, y: 32, z: 32}
   m_Children:
-  - {fileID: 411186}
+  - {fileID: 492138}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2311186
+--- !u!4 &476408
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176408}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492138}
+  m_RootOrder: 0
+--- !u!4 &492138
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 476408}
+  m_Father: {fileID: 471038}
+  m_RootOrder: 0
+--- !u!23 &2376408
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111186}
+  m_GameObject: {fileID: 176408}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,13 +112,6 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3311186
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111186}
-  m_Mesh: {fileID: 0}
 --- !u!33 &3371038
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -99,26 +119,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171038}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11411186
-MonoBehaviour:
+--- !u!33 &3376408
+MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e075b9a3e08e2f74fbd651c858ab16ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 5e7b748431150d845ac02d4feed95668, type: 2}
-  initialSkinName: default
-  calculateNormals: 0
-  calculateTangents: 0
-  zSpacing: 0
-  renderMeshes: 1
-  immutableTriangles: 0
-  logErrors: 0
-  submeshSeparators: []
+  m_GameObject: {fileID: 176408}
+  m_Mesh: {fileID: 0}
 --- !u!114 &11471038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,8 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5744c33891a8047af7c295e9c8b994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AISpeed: 100
-  NextWaypointDistance: 5
+  AISpeed: 75
+  NextWaypointDistance: 10
+  _animationHolder: {fileID: 192138}
 --- !u!114 &11471040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,19 +180,29 @@ MonoBehaviour:
     tagsChange: -3
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
---- !u!114 &11476674
+--- !u!114 &11476408
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 171038}
+  m_GameObject: {fileID: 176408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateError: 1
-  checkTime: 1
+  skeletonDataAsset: {fileID: 11400000, guid: 5e7b748431150d845ac02d4feed95668, type: 2}
+  initialSkinName: default
+  calculateNormals: 0
+  calculateTangents: 0
+  zSpacing: 0
+  renderMeshes: 1
+  immutableTriangles: 0
+  logErrors: 0
+  submeshSeparators: []
+  timeScale: 1
+  loop: 1
+  _animationName: walk
 --- !u!135 &13571038
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -195,7 +213,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: .400000006
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &14371038
 CharacterController:

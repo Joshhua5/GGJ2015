@@ -215,6 +215,9 @@
     <None Include="Assets\3rdParty\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme.txt" />
     <None Include="Assets\3rdParty\AstarPathfindingProject\Readme_upgrading.txt" />
+    <None Include="Assets\Art Assets\Door\Door Unit.atlas.txt" />
+    <None Include="Assets\Art Assets\Generator\GGJ2015_generator.atlas.txt" />
+    <None Include="Assets\Spines\Door\Door Unit.atlas.txt" />
     <None Include="Assets\Spines\Person\Person-01.atlas.txt" />
     <None Include="Assets\Spines\Person\skeleton.atlas.txt" />
     <None Include="Assets\Spines\Personv2\Person-size.atlas.txt" />
