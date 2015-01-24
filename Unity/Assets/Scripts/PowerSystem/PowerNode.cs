@@ -12,15 +12,19 @@ public class PowerNode : MonoBehaviour {
 
     // Particle Effect
     public ParticleSystem triggerEffect;
-    private ParticleSystem privateTriggerEffect;
+    private ParticleSystem _triggerEffect;
 
 	private PowerSystem ps;
 	public bool parentConnected = true;
 
 	// Use this for initialization
-	void Start () { 
+	void Start () {
         if (triggerEffect != null)
-            privateTriggerEffect = (ParticleSystem)Instantiate(triggerEffect);
+        {
+            _triggerEffect = (ParticleSystem)Instantiate(triggerEffect);
+            _triggerEffect.Stop();
+            _triggerEffect.transform.position = this.transform.position;
+        }
 	}
 	
 	// Update is called once per frame
@@ -122,6 +126,7 @@ public class PowerNode : MonoBehaviour {
 	public void toggle(){
 		if (on) 
 		{
+            // Should have turn off sound
 			if (isActive ()) {
 				ps.releasePower ();
 				connected = false;
@@ -129,16 +134,17 @@ public class PowerNode : MonoBehaviour {
 			on = false;
 		} 
 		else 
-		{
+		{ 
 			on = true;
 			if (parentConnected && ps.hasPower ())
-			{
+			{            
+                 // Only spark if being turned on, 
+                if (_triggerEffect != null)
+                    _triggerEffect.Play();
 				ps.usePower ();
 				connected = true;
 			}
 		}
-        if (privateTriggerEffect != null)
-            privateTriggerEffect.Play();
 
 		//this.audio.Play ();
 		//Debug.Log (""+roomNo+": toggle pressed. on="+on);
