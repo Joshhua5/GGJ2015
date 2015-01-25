@@ -11,21 +11,32 @@ public class Door : MonoBehaviour
     private uint chargeTime = 5;
 
     [SerializeField]
-    private AudioSource _openSound;
+    private AudioClip _openSound;
     
     [SerializeField]
-    private AudioSource _closeSound;
+    private AudioClip _closeSound;
+
+    [SerializeField]
+    private int _doorStartingHP = 100;
+
+    public float HP { get; private set; }
 
     private float charge;
     private Room room;
     private SkeletonAnimation _animation;
     private bool charging;
     Bounds bounds;
+    private AudioSource _audioSource;
+
+    public delegate void DoorStateChanged(bool isOpen);
+    public event DoorStateChanged OnDoorStateChanged;
 
     public void Start()
     {
+        HP = _doorStartingHP;
         _animation = GetComponentInChildren<SkeletonAnimation>();
         room = GetComponentInParent<Room>();
+        _audioSource = GetComponent<AudioSource>();
         Open = false;
         bounds = collider.bounds;
         SetState(Open);
@@ -35,6 +46,7 @@ public class Door : MonoBehaviour
 
     public void SetState(bool open)
     {
+        if (HP <= 0) open = true; // override, can't close a broken door
         Open = open;
 
         var guo = new GraphUpdateObject(bounds);
@@ -45,16 +57,18 @@ public class Door : MonoBehaviour
         if (Open)
         {
             _animation.state.SetAnimation(0, "open", false);
-            _openSound.Play();
+            _audioSource.PlayOneShot(_openSound);
         }
         else
         {
             _animation.state.SetAnimation(0, "Close", false);
-            _closeSound.Play();
+            _audioSource.PlayOneShot(_closeSound);
         }
         _animation.Update();
 
-        Debug.Log("Door: " + open);
+        if (OnDoorStateChanged != null)
+            OnDoorStateChanged(open);
+
         AstarPath.active.UpdateGraphs(guo);
     }
 
@@ -69,6 +83,15 @@ public class Door : MonoBehaviour
                 charging = true;
         // Possible responce such as a red light if the door fails.
     } 
+
+    public void TakeDamage(float hp)
+    {
+        HP -= hp;
+        if (HP <= 0)
+        {
+            SetState(true);
+        }
+    }
 
     // Update is called once per frame
     void Update()

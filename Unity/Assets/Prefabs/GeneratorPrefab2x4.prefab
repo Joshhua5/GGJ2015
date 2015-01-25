@@ -10,12 +10,12 @@ GameObject:
   - 4: {fileID: 421384}
   - 33: {fileID: 3321384}
   - 65: {fileID: 6521384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GeneratorPrefab2x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143612
 GameObject:
@@ -28,12 +28,12 @@ GameObject:
   - 33: {fileID: 3343612}
   - 23: {fileID: 2343612}
   - 114: {fileID: 11443612}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New SkeletonAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &421384
 Transform:
@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 488, y: 120, z: -1}
+  m_LocalPosition: {x: 488, y: 120.000031, z: -1}
   m_LocalScale: {x: 32, y: 64, z: 1}
   m_Children:
   - {fileID: 443612}
@@ -55,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.25, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -.466390014, y: -.491769999, z: 2.35030004e-08}
+  m_LocalScale: {x: 2.77283168, y: 1.44505429, z: 1}
   m_Children: []
   m_Father: {fileID: 421384}
   m_RootOrder: 0

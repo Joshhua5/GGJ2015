@@ -7,6 +7,18 @@ public class Agent : MonoBehaviour
 {
     public float AISpeed = 100.0f;
     public float NextWaypointDistance = 5;
+    public float FightDoorDistance = 16;
+
+    private enum AgentState
+    {
+        Idle,
+        MovingToAttackDoor,
+        AttackingDoor,
+        MovingToAttackFire,
+        AttackingFire,
+        Running
+    };
+    private AgentState _state;
 
     private Seeker _seeker;
     private CharacterController _controller;
@@ -14,6 +26,7 @@ public class Agent : MonoBehaviour
     private int _currentWaypoint = 0;
     private SkeletonAnimation _animation;
     private Vector3 _destination;
+    private Vector3 _doorDestination;
 
     [SerializeField]
     private GameObject _animationHolder;
@@ -25,7 +38,7 @@ public class Agent : MonoBehaviour
     private AudioSource _deathSound;
 
     [SerializeField]
-    private float _firePenalty = 10; 
+    private float _firePenalty = 10;
     private float _health;
 
     private float _speed;
@@ -37,28 +50,62 @@ public class Agent : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        _state = AgentState.Idle;
         _speed = Random.Range(AISpeed - 20, AISpeed + 20);
         _seeker = GetComponent<Seeker>();
         _controller = GetComponent<CharacterController>();
-        _animation = GetComponentInChildren<SkeletonAnimation>(); 
+        _animation = GetComponentInChildren<SkeletonAnimation>();
     }
 
     public void SetDestination(Vector3 destination)
     {
-        _seeker.StartPath(transform.position, destination, OnPathComplete);
         _destination = destination;
+        Room room = GetCurrentRoom();
+
+        if (room != null && room.HasDoor && !room.FirstDoor.Open)
+        {
+            _seeker.StartPath(transform.position, room.FirstDoor.transform.position, OnDoorPathComplete);
+            _doorDestination = room.FirstDoor.transform.position;
+            room.FirstDoor.OnDoorStateChanged += FirstDoor_OnDoorStateChanged;
+        }
+        else
+        {
+            _seeker.StartPath(transform.position, destination, OnPathComplete);
+        }
     }
 
-    public void OnPathComplete(Path p)
+    void FirstDoor_OnDoorStateChanged(bool isOpen)
+    {
+        SetDestination(_destination);
+    }
+
+    void OnPathComplete(Path p)
     {
         if (!p.error)
         {
             _path = p;
+            _state = AgentState.Running;
         }
         else
         {
+            _animation.state.SetAnimation(0, "standing", true);
             _path = null;
-            Room room = GetCurrentRoom();
+        }
+        _currentWaypoint = 0;
+    }
+
+    void OnDoorPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            _path = p;
+            _state = AgentState.MovingToAttackDoor;
+        }
+        else
+        {
+            _animation.state.SetAnimation(0, "standing", true);
+            _path = null;
+            Debug.Log("Agent doesn't have an action");
         }
         _currentWaypoint = 0;
     }
@@ -67,6 +114,16 @@ public class Agent : MonoBehaviour
     {
         if (_path == null)
         {
+            if (_state == AgentState.AttackingDoor)
+            {
+                Room room = GetCurrentRoom();
+                if (room != null && room.HasDoor && !room.FirstDoor.Open)
+                {
+                    Door door = room.FirstDoor;
+                    door.TakeDamage(Time.deltaTime);
+                }
+            }
+
             return;
         }
 
@@ -85,26 +142,42 @@ public class Agent : MonoBehaviour
 
         if (_path.IsDone())
             _animation.state.SetAnimation(0, "walk", true);
-        else 
+        else
             _animation.state.SetAnimation(0, "standing", true);
 
         _animation.Update();
 
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
-        if (Vector3.Distance(transform.position, nextWaypoint) < NextWaypointDistance)
+        if (_state == AgentState.MovingToAttackDoor)
         {
-            _currentWaypoint++;
-        } 
-        else if (Vector3.Distance(transform.position, nextWaypoint) > NextWaypointDistance  * 4)
+            if (Vector3.Distance(transform.position, _doorDestination) < FightDoorDistance)
+            {
+                _path = null;
+                _currentWaypoint = 0;
+                _state = AgentState.AttackingDoor;
+                _animation.state.SetAnimation(0, "standing", true);
+            }
+            else if (Vector3.Distance(transform.position, nextWaypoint) < NextWaypointDistance)
+            {
+                _currentWaypoint++;
+            }
+        }
+        else if (_state == AgentState.Running)
         {
-            SetDestination(_destination);
-            _path = null;
-            _currentWaypoint = 0;
+            if (Vector3.Distance(transform.position, nextWaypoint) < NextWaypointDistance)
+            {
+                _currentWaypoint++;
+            }
+            else if (Vector3.Distance(transform.position, nextWaypoint) > NextWaypointDistance * 4)
+            {
+                SetDestination(_destination);
+                _path = null;
+                _currentWaypoint = 0;
+            }
         }
 
-
-        Ray ray = new Ray(transform.position, Vector3.down);  
+        Ray ray = new Ray(transform.position, Vector3.down);
 
         _raycastHit = Physics.Raycast(ray, out _hit, 100, 1 << Layers.Ground);
         if (_raycastHit)
@@ -122,10 +195,12 @@ public class Agent : MonoBehaviour
     }
 
     private Room GetCurrentRoom()
-    { 
-        if (_raycastHit)
-            return _hit.collider.gameObject.GetComponent<Room>();
-        else 
-            return null; 
+    {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100, 1 << Layers.Ground))
+            return hit.collider.transform.parent.parent.gameObject.GetComponent<Room>();
+        else
+            return null;
     }
 }
