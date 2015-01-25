@@ -11,7 +11,7 @@ public class Room : MonoBehaviour
 
 	public PowerNode powerNode;
 
-    public Fire Fire;
+    public GameObject Fire;
 
     public bool HasDoor
     {
