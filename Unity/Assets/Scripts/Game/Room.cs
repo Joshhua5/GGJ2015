@@ -13,6 +13,9 @@ public class Room : MonoBehaviour
 
     public GameObject Fire;
 
+    [SerializeField]
+    private Light _roomLight;
+
     public bool HasDoor
     {
         get
@@ -22,6 +25,11 @@ public class Room : MonoBehaviour
     }
 
     public bool HasPower() { return powerNode.isActive(); }
+
+    void Update()
+    {
+        _roomLight.enabled = powerNode.isActive();
+    }
 
     public Door FirstDoor
     {

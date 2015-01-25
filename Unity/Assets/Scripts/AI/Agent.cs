@@ -56,6 +56,8 @@ public class Agent : MonoBehaviour
     GameObject go;
     LineRenderer lr;
 
+    private bool _isDead;
+
     // Use this for initialization
     void Awake()
     {
@@ -158,13 +160,15 @@ public class Agent : MonoBehaviour
             if (_hit.collider.gameObject.GetComponent<Fire>() != null)
                 _health -= _firePenalty * Time.deltaTime;
 
-        if (_health < 0)
+        if (_health < 0 && !_isDead)
         {
             // Dead
             if (OnAgentDeath != null)
                 OnAgentDeath(this);
+
+            _isDead = true;
+
             AudioSource.PlayClipAtPoint(_deathSound[Random.Range(0, _deathSound.Length)], Camera.main.transform.position);
-            
         }
 
 

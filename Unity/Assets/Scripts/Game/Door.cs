@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
     public bool Open { get; private set; }
 
     [SerializeField]
-    private uint chargeTime = 5;
+    private float chargeTime = 5;
 
     [SerializeField]
     private AudioClip _openSound;
@@ -91,11 +91,48 @@ public class Door : MonoBehaviour
             charge += Time.deltaTime; 
         else if(charge > 0)
             charge -= Time.deltaTime;
+
+        if (charging)
+            SetAnimation((int)(charge * 10 / chargeTime));
+
         if (charge >= chargeTime)
         {
             charging = false;
             if(room.HasPower())
                SetState(true);
         }
-    } 
+    }
+
+    private int _charge;
+
+    void SetAnimation(int charge)
+    {
+        if (_charge == charge)
+            return;
+
+        if (charge == 1)
+            _animation.state.SetAnimation(0, "charge1", false);
+        else if (charge == 2)
+            _animation.state.SetAnimation(0, "charge2", false);
+        else if (charge == 3)
+            _animation.state.SetAnimation(0, "charge3", false);
+        else if (charge == 4)
+            _animation.state.SetAnimation(0, "charge4", false);
+        else if (charge == 5)
+            _animation.state.SetAnimation(0, "charge5", false);
+        else if (charge == 6)
+            _animation.state.SetAnimation(0, "charge6", false);
+        else if (charge == 7)
+            _animation.state.SetAnimation(0, "charge7", false);
+        else if (charge == 8)
+            _animation.state.SetAnimation(0, "charge8", false);
+        else if (charge == 9)
+            _animation.state.SetAnimation(0, "charge9", false);
+        else if (charge == 10)
+            _animation.state.SetAnimation(0, "charge10", false);
+
+        _animation.Update();
+
+        _charge = charge;
+    }
 }
