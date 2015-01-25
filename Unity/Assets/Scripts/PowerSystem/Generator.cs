@@ -19,23 +19,23 @@ public class Generator : MonoBehaviour {
 	{
 		
 		if (power == 0)
-				_animation.state.SetAnimation (0, "Off", false);
+				_animation.state.SetAnimation (0, "Off", true);
 		else if (power == 1)
-				_animation.state.SetAnimation (0, "OnOne", false);
+			_animation.state.SetAnimation (0, "OnOne", true);
 		else if (power == 2)
-				_animation.state.SetAnimation (0, "OnTwo", false);
+			_animation.state.SetAnimation (0, "OnTwo", true);
 		else if (power == 3)
-			_animation.state.SetAnimation (0, "OnThree", false);
+			_animation.state.SetAnimation (0, "OnThree", true);
 		else if (power == 4)
-			_animation.state.SetAnimation (0, "OnFour", false);
+			_animation.state.SetAnimation (0, "OnFour", true);
 		else if (power == 5)
-			_animation.state.SetAnimation (0, "OnFive", false);
+			_animation.state.SetAnimation (0, "OnFive", true);
 		else if (power == 6)
-			_animation.state.SetAnimation (0, "OnSix", false);
+			_animation.state.SetAnimation (0, "OnSix", true);
 		else if (power == 7)
-			_animation.state.SetAnimation (0, "OnSeven", false);
+			_animation.state.SetAnimation (0, "OnSeven", true);
 		else
-			_animation.state.SetAnimation(0, "On", false);
+			_animation.state.SetAnimation(0, "On", true);
 			//_animation.state.SetAnimation(0, ("On"+power), false);
 		
 		_animation.Update();
