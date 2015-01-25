@@ -6,6 +6,7 @@ public class PowerSystem : MonoBehaviour {
 	public PowerNode root;
 	public int totalPower;
 	public int availablePower;
+	public Generator generator;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +52,7 @@ public class PowerSystem : MonoBehaviour {
 		if (hasPower ()) {
 			availablePower--;
 			//Debug.Log ("Use 1 unit. Power remaining = "+availablePower);
+			generator.SetState(availablePower);
 			return true;
 		}
 		return false;
@@ -60,6 +62,7 @@ public class PowerSystem : MonoBehaviour {
 		if (availablePower < totalPower) 
 		{
 			availablePower++;
+			generator.SetState(availablePower);
 			//Debug.Log ("Release 1 unit. Power remaining = " + availablePower);
 			if (availablePower == 1) updatePowerSpread ();
 		}

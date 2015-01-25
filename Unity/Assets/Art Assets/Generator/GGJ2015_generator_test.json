@@ -1,0 +1,186 @@
+{
+"skeleton": { "hash": "eaAZ3uwze9I7lHWrHU0vo8U40/g", "spine": "2.1.08", "width": 34.06, "height": 66.03 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "energy 1", "parent": "root", "x": 16.61, "y": 13.08, "rotation": -0.39 },
+	{ "name": "energy 2", "parent": "root", "x": 16.74, "y": 17.09 },
+	{ "name": "energy 3", "parent": "root", "x": 16.74, "y": 21.24 },
+	{ "name": "energy 4", "parent": "root", "x": 16.74, "y": 24.73 },
+	{ "name": "energy 5", "parent": "root", "x": 17.01, "y": 28.88 },
+	{ "name": "energy 6", "parent": "root", "x": 16.87, "y": 32.9 },
+	{ "name": "energy 7", "parent": "root", "x": 17.01, "y": 36.79 },
+	{ "name": "energy 8", "parent": "root", "x": 17.14, "y": 41.08 },
+	{ "name": "red light", "parent": "root", "x": 16.8, "y": 56.78 }
+],
+"slots": [
+	{ "name": "Base", "bone": "root", "attachment": "Base" },
+	{ "name": "red light", "bone": "red light", "attachment": "red light" },
+	{ "name": "green bar", "bone": "energy 1" },
+	{ "name": "green bar2", "bone": "energy 2", "attachment": "green bar" },
+	{ "name": "green bar3", "bone": "energy 3", "attachment": "green bar" },
+	{ "name": "green bar4", "bone": "energy 4", "attachment": "green bar" },
+	{ "name": "green bar5", "bone": "energy 5", "attachment": "green bar" },
+	{ "name": "green bar6", "bone": "energy 6", "attachment": "green bar" },
+	{ "name": "green bar7", "bone": "energy 7", "attachment": "green bar" },
+	{ "name": "green bar8", "bone": "energy 8", "attachment": "green bar" },
+	{ "name": "energy 1", "bone": "energy 1", "attachment": "green bar" }
+],
+"skins": {
+	"default": {
+		"Base": {
+			"Base": { "x": 17, "y": 33, "rotation": 0.04, "width": 34, "height": 66 }
+		},
+		"energy 1": {
+			"green bar": { "width": 18, "height": 6 }
+		},
+		"green bar2": {
+			"green bar": { "width": 18, "height": 6 }
+		},
+		"green bar3": {
+			"green bar": { "width": 18, "height": 6 }
+		},
+		"green bar4": {
+			"green bar": { "width": 18, "height": 6 }
+		},
+		"green bar5": {
+			"green bar": { "width": 18, "height": 6 }
+		},
+		"green bar6": {
+			"green bar": { "width": 18, "height": 6 }
+		},
+		"green bar7": {
+			"green bar": { "rotation": 0.04, "width": 18, "height": 6 }
+		},
+		"green bar8": {
+			"green bar": { "width": 18, "height": 6 }
+		},
+		"red light": {
+			"red light": { "x": 0.69, "y": -0.28, "width": 11, "height": 11 }
+		}
+	}
+},
+"animations": {
+	"On": {
+		"slots": {
+			"Base": {
+				"attachment": [
+					{ "time": 0, "name": "Base" }
+				]
+			},
+			"energy 1": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"green bar": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar2": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"green bar3": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"green bar4": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"green bar5": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"green bar6": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"green bar7": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"green bar8": {
+				"attachment": [
+					{ "time": 0, "name": "green bar" }
+				]
+			},
+			"red light": {
+				"attachment": [
+					{ "time": 0, "name": "red light" },
+					{ "time": 0.1666, "name": null },
+					{ "time": 0.3333, "name": "red light" }
+				]
+			}
+		}
+   },
+   "Off": {
+		"slots": {
+			"Base": {
+				"attachment": [
+					{ "time": 0, "name": "Base" }
+				]
+			},
+			"energy 1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"green bar8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"red light": {
+				"attachment": [
+					{ "time": 0, "name": "red light" },
+					{ "time": 0.1666, "name": null },
+					{ "time": 0.3333, "name": "red light" }
+				]
+			}
+		}
+	}
+}
+}
