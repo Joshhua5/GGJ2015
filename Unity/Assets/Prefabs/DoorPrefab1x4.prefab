@@ -73,7 +73,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 0f27fb80c22abd34dbdbb923e65c89a6, type: 2}
+  - {fileID: 2100000, guid: 227df3c8e694ad148a3548b4bff30e46, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 4b0d657f80d8fb249931f460ea21dbce, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: ba6cb11b7a09451459dc9ab1a86ac765, type: 2}
   initialSkinName: default
   calculateNormals: 0
   calculateTangents: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   submeshSeparators: []
   timeScale: 1
   loop: 0
-  _animationName: Close
+  _animationName: open
 --- !u!114 &11463522
 MonoBehaviour:
   m_ObjectHideFlags: 1

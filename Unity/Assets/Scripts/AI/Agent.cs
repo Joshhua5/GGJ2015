@@ -41,6 +41,8 @@ public class Agent : MonoBehaviour
     private float _firePenalty = 10;
     private float _health;
 
+    public float Health { get { return _health; } }
+
     private float _speed;
     private Door _currentDoor;
 
@@ -48,6 +50,8 @@ public class Agent : MonoBehaviour
     private bool _raycastHit;
     private RaycastHit _hit;
 
+    public delegate void AgentDeath(Agent sender);
+    public event AgentDeath OnAgentDeath;
 
     GameObject go;
     LineRenderer lr;
@@ -157,7 +161,8 @@ public class Agent : MonoBehaviour
         if (_health < 0)
         {
             // Dead
-            DestroyObject(this.gameObject);
+            if (OnAgentDeath != null)
+                OnAgentDeath(this);
             _deathSound.Play();
         }
 

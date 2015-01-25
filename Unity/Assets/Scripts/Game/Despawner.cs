@@ -8,7 +8,7 @@ public class Despawner : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Arrived");
-        Destroy(other.gameObject);
+        var agent = other.gameObject.GetComponent<Agent>();
+        Game.Instance.PlayerEscaped(agent);
     }
 }
