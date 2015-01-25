@@ -19,10 +19,10 @@ public class Agent : MonoBehaviour
     private GameObject _animationHolder;
 
     [SerializeField]
-    private float _initialHealth;
+    private float _initialHealth = 100;
 
     [SerializeField]
-    private float _firePenalty; 
+    private float _firePenalty = 10; 
     private float _health;
 
     private float _speed;
@@ -82,7 +82,7 @@ public class Agent : MonoBehaviour
 
         if (_path.IsDone())
             _animation.state.SetAnimation(0, "walk", true);
-        else
+        else 
             _animation.state.SetAnimation(0, "standing", true);
 
         _animation.Update();
