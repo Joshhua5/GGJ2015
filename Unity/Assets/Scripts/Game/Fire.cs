@@ -19,17 +19,19 @@ public class Fire : MonoBehaviour
         // Get the direction to expand into 
         RaycastHit hit;
 
+        int mask = (1 << Layers.Obstacles) | (1 << Layers.Ground);
+
         // Consider making 100 and then assume there's a large gap until a wall
-        if (Physics.Raycast(new Ray(transform.position, Vector3.back), out hit, 1000, 1 << Layers.Obstacles))
+        if (Physics.Raycast(new Ray(transform.position, Vector3.back), out hit, 1000, mask))
                 backDistance = hit.distance;
-       
-        if (Physics.Raycast(new Ray(transform.position, Vector3.forward), out hit, 1000, 1 << Layers.Obstacles))
+
+        if (Physics.Raycast(new Ray(transform.position, Vector3.forward), out hit, 1000, mask))
                 frontDistance = hit.distance;
-        
-        if (Physics.Raycast(new Ray(transform.position, Vector3.left), out hit, 1000, 1 << Layers.Obstacles))
+
+        if (Physics.Raycast(new Ray(transform.position, Vector3.left), out hit, 1000, mask))
                 leftDistance = hit.distance;
-        
-        if (Physics.Raycast(new Ray(transform.position, Vector3.right), out hit, 1000, 1 << Layers.Obstacles))
+
+        if (Physics.Raycast(new Ray(transform.position, Vector3.right), out hit, 1000, mask))
                 rightDistance = hit.distance;
         
     }
@@ -86,8 +88,8 @@ public class Fire : MonoBehaviour
 
                     modifier.Set(0, 0, 0);
 
-                }   
-            // destroy if the object wasn't able to move.
+                }    
+
             if (!(modifier.x == 0 && modifier.y == 0 && modifier.z == 0))
             { 
                 // Spawn new fire

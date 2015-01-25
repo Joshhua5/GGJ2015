@@ -34,6 +34,10 @@ public class Agent : MonoBehaviour
     private bool _raycastHit;
     private RaycastHit _hit;
 
+
+    GameObject go;
+    LineRenderer lr;
+
     // Use this for initialization
     void Awake()
     {
@@ -43,11 +47,18 @@ public class Agent : MonoBehaviour
         _animation = GetComponentInChildren<SkeletonAnimation>(); 
     }
 
+    void Start()
+    {
+       go = new GameObject();
+        lr = go.AddComponent<LineRenderer>(); 
+        _health = _initialHealth;
+    }
+
     public void SetDestination(Vector3 destination)
     {
         _seeker.StartPath(transform.position, destination, OnPathComplete);
         _destination = destination;
-    }
+    } 
 
     public void OnPathComplete(Path p)
     {
@@ -65,6 +76,36 @@ public class Agent : MonoBehaviour
 
     void Update()
     {
+        // Draw health bar
+        Vector3 barPos = transform.position + Vector3.forward * 16;
+        float healthPerc = _health / _initialHealth;
+        //Gizmos.matrix = this.transform.localToWorldMatrix;
+        //Gizmos.color = new Color(-(-1 + healthPerc), healthPerc, 0);
+        //Gizmos.DrawLine(barPos - (Vector3.left * 8), barPos + ((-Vector3.right * 8) + ((Vector3.right * 16) * healthPerc)));
+
+        lr.SetPosition(0, barPos - (Vector3.left * 16) + (Vector3.up * 20));
+        lr.SetPosition(1, barPos + ((-Vector3.right * 16) + (Vector3.up * 20) + ((Vector3.right * 32) * healthPerc)));
+
+        //lr.material = new Material(Shader.Find("Particles/Additive"));
+        lr.SetColors(Color.green, Color.green);
+        lr.SetWidth(5f, 5f); 
+
+        Ray ray = new Ray(transform.position + (Vector3.up * 20), Vector3.down);
+
+        _raycastHit = Physics.Raycast(ray, out _hit, 100, 1 << Layers.Ground | 1 << Layers.Obstacles);
+        if (_raycastHit)
+            // Check if object is fire
+            if (_hit.collider.gameObject.GetComponent<Fire>() != null)
+                _health -= _firePenalty * Time.deltaTime;
+
+        if (_health < 0)
+        {
+            // Dead
+            DestroyObject(this.gameObject);
+            _deathSound.Play();
+        }
+
+
         if (_path == null)
         {
             return;
@@ -102,24 +143,9 @@ public class Agent : MonoBehaviour
             _path = null;
             _currentWaypoint = 0;
         }
-
-
-        Ray ray = new Ray(transform.position, Vector3.down);  
-
-        _raycastHit = Physics.Raycast(ray, out _hit, 100, 1 << Layers.Ground);
-        if (_raycastHit)
-            // Check if object is fire
-            if (_hit.collider.gameObject.GetComponent<Fire>() != null)
-                _health -= _firePenalty * Time.deltaTime;
-
-        if (_health < 0)
-        {
-            // Dead
-            DestroyObject(this);
-            _deathSound.Play();
-        }
-
+         
     }
+
 
     private Room GetCurrentRoom()
     { 
