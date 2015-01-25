@@ -64,15 +64,15 @@ public class Agent : MonoBehaviour
 
     void Start()
     {
-       go = new GameObject();
-        lr = go.AddComponent<LineRenderer>(); 
+        go = new GameObject();
+        lr = go.AddComponent<LineRenderer>();
         _health = _initialHealth;
     }
 
     public void SetDestination(Vector3 destination)
     {
         _destination = destination;
- 
+
         Room room = GetCurrentRoom();
 
         if (room != null && room.HasDoor && !room.FirstDoor.Open)
@@ -97,6 +97,21 @@ public class Agent : MonoBehaviour
     void FirstDoor_OnDoorStateChanged(bool isOpen)
     {
         SetDestination(_destination);
+    }
+
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            _path = p;
+            _state = AgentState.Running;
+        }
+        else
+        {
+            _animation.state.SetAnimation(0, "standing", true);
+            _path = null;
+        }
+        _currentWaypoint = 0;
     }
 
     void OnDoorPathComplete(Path p)
@@ -129,7 +144,7 @@ public class Agent : MonoBehaviour
 
         //lr.material = new Material(Shader.Find("Particles/Additive"));
         lr.SetColors(Color.green, Color.green);
-        lr.SetWidth(5f, 5f); 
+        lr.SetWidth(5f, 5f);
 
         Ray ray = new Ray(transform.position + (Vector3.up * 20), Vector3.down);
 
