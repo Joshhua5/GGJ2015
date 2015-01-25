@@ -18,8 +18,6 @@ public class PowerNode : MonoBehaviour {
     private ParticleSystem _triggerEffect;
 
     // Audio
-    private AudioSource _audioSource;
-
     [SerializeField]
     private AudioClip _triggerOnSound;
     [SerializeField]
@@ -34,8 +32,6 @@ public class PowerNode : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _audioSource = gameObject.AddComponent<AudioSource>();
-
         if (triggerEffect != null)
         {
             _triggerEffect = (ParticleSystem)Instantiate(triggerEffect);
@@ -168,7 +164,7 @@ public class PowerNode : MonoBehaviour {
 			if (isActive ()) {
 				ps.releasePower ();
 				connected = false;
-                _audioSource.PlayOneShot(_triggerOffSound);
+                AudioSource.PlayClipAtPoint(_triggerOffSound, Camera.main.transform.position);
 			}
 			on = false;
 		} 
@@ -180,7 +176,7 @@ public class PowerNode : MonoBehaviour {
                  // Only spark if being turned on, 
                 if (_triggerEffect != null)
                     _triggerEffect.Play();
-                _audioSource.PlayOneShot(_triggerOnSound);
+                AudioSource.PlayClipAtPoint(_triggerOnSound, Camera.main.transform.position);
 
 				ps.usePower ();
 				connected = true;

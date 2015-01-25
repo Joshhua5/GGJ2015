@@ -26,7 +26,6 @@ public class Door : MonoBehaviour
     private SkeletonAnimation _animation;
     private bool charging;
     Bounds bounds;
-    private AudioSource _audioSource;
 
     public delegate void DoorStateChanged(bool isOpen);
     public event DoorStateChanged OnDoorStateChanged;
@@ -36,7 +35,6 @@ public class Door : MonoBehaviour
         HP = _doorStartingHP;
         _animation = GetComponentInChildren<SkeletonAnimation>();
         room = GetComponentInParent<Room>();
-        _audioSource = GetComponent<AudioSource>();
         Open = false;
         bounds = collider.bounds;
         SetState(Open);
@@ -52,12 +50,12 @@ public class Door : MonoBehaviour
         if (Open)
         {
             _animation.state.SetAnimation(0, "open", false);
-            _audioSource.PlayOneShot(_openSound);
+            AudioSource.PlayClipAtPoint(_openSound, Camera.main.transform.position);
         }
         else
         {
             _animation.state.SetAnimation(0, "Close", false);
-            _audioSource.PlayOneShot(_closeSound);
+            AudioSource.PlayClipAtPoint(_closeSound, Camera.main.transform.position);
         }
         _animation.Update();
 
