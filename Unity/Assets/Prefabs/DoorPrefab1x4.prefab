@@ -54,8 +54,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174674}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: 920, y: 496.000122, z: -0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 320, y: 360.000061, z: 0}
   m_LocalScale: {x: 16, y: 128, z: 1}
   m_Children:
   - {fileID: 442340}
@@ -73,7 +73,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 227df3c8e694ad148a3548b4bff30e46, type: 2}
+  - {fileID: 2100000, guid: ad164194b5dac8446b986d17cd92d868, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: ba6cb11b7a09451459dc9ab1a86ac765, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: bae30c21024238e46b469655e787b387, type: 2}
   initialSkinName: default
   calculateNormals: 0
   calculateTangents: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b344a802e01d64589bae21a5fa4754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chargeTime: 5
   _openSound: {fileID: 8300000, guid: 07fb7f9d011de4da0a915b85a1503504, type: 3}
   _closeSound: {fileID: 8300000, guid: 07fb7f9d011de4da0a915b85a1503504, type: 3}
   _doorStartingHP: 100

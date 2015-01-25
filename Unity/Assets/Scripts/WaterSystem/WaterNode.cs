@@ -11,6 +11,11 @@ public class WaterNode : MonoBehaviour {
 	public int roomNo;
 
     [SerializeField]
+    private Material offMaterial;
+    [SerializeField]
+    private Material onMaterial;
+
+    [SerializeField]
     private Room room;
 
 	// Particle Effect
@@ -36,8 +41,8 @@ public class WaterNode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (isActive ()) this.renderer.material.color = Color.green;
-		else this.renderer.material.color = Color.blue;
+        if (isActive()) renderer.material = onMaterial;
+        else renderer.material = offMaterial;
 	}
 	
 	void OnMouseDown(){
@@ -156,7 +161,7 @@ public class WaterNode : MonoBehaviour {
 			}
 		} 
 		//this.audio.Play ();
-		//Debug.Log (""+roomNo+": toggle pressed. on="+on);
+	    Debug.Log (""+roomNo+": toggle pressed. on="+on);
 		updateChildren ();
 	}
 	

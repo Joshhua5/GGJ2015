@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456040}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456046}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1033,13 +1033,13 @@ MonoBehaviour:
   - {fileID: 11456038}
   - {fileID: 11456044}
   - {fileID: 11456068}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
   materialOn: {fileID: 2100000, guid: b7c9bb1a758c99f4a9d03d16f2ff7212, type: 2}
   materialOff: {fileID: 2100000, guid: d0d0e271d19d4c6478501e7e83913ec5, type: 2}
-  parentConnected: 0
+  parentConnected: 1
   triggerEffect: {fileID: 19885720, guid: faedcf9516c43bd46b9867b204dd80cd, type: 2}
   _triggerOnSound: {fileID: 8300000, guid: 3b61acf3c9e884ec487c6ec58fed7234, type: 3}
   _triggerOffSound: {fileID: 8300000, guid: 3b61acf3c9e884ec487c6ec58fed7234, type: 3}
@@ -1054,8 +1054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccc9a8e5759c1342a1377d64ae4a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  children: []
-  on: 1
+  children:
+  - {fileID: 11456056}
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1078,7 +1079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456048}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1101,7 +1102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456050}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1122,9 +1123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccc9a8e5759c1342a1377d64ae4a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  children:
-  - {fileID: 11456066}
-  on: 1
+  children: []
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   children: []
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456058}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1190,8 +1190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccc9a8e5759c1342a1377d64ae4a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  children: []
-  on: 1
+  children:
+  - {fileID: 11456066}
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1215,7 +1216,7 @@ MonoBehaviour:
   children:
   - {fileID: 11456060}
   - {fileID: 11456052}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1237,7 +1238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   children: []
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1260,7 +1261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456064}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1282,7 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   children: []
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1305,8 +1306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456062}
-  - {fileID: 11456056}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   children:
   - {fileID: 11456054}
-  on: 1
+  on: 0
   connected: 0
   consumesPower: 1
   roomNo: 0
@@ -1351,8 +1351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 11456042}
-  totalPower: 6
-  availablePower: 6
+  totalPower: 8
+  availablePower: 8
   generator: {fileID: 0}
 --- !u!143 &14356038
 CharacterController:

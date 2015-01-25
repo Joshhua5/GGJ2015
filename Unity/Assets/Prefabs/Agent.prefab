@@ -142,7 +142,11 @@ MonoBehaviour:
   FightDoorDistance: 30
   _animationHolder: {fileID: 192138}
   _initialHealth: 100
-  _deathSound: {fileID: 0}
+  _deathSound:
+  - {fileID: 8300000, guid: bda0019c752654251bc7f2cc399e47dc, type: 3}
+  - {fileID: 8300000, guid: 9bdd42ae449294e148ee4743fc4e28b3, type: 3}
+  - {fileID: 8300000, guid: 9c7ba2445dbc74187a3318606c549ccd, type: 3}
+  - {fileID: 8300000, guid: d49732ee34b894e38babf3fec720d4ab, type: 3}
   _firePenalty: 10
 --- !u!114 &11471040
 MonoBehaviour:
