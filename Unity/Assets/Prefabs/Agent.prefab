@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AISpeed: 75
   NextWaypointDistance: 10
-  FightDoorDistance: 40
+  FightDoorDistance: 30
   _animationHolder: {fileID: 192138}
   _initialHealth: 100
   _deathSound: {fileID: 0}
