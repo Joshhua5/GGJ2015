@@ -19,7 +19,11 @@ public class WaterNode : MonoBehaviour {
 	
 	private WaterSystem ws;
 	public bool parentConnected = true;
-	
+
+	private static Color _lineOn = new Color(0,255,0);
+	//private static Color _lineOff = new Color(120,120,120);
+	private static Color _lineOff = new Color(0.1f,0.1f,0.1f);
+
 	// Use this for initialization
 	void Start () {
 		if (triggerEffect != null)
@@ -196,7 +200,8 @@ public class WaterNode : MonoBehaviour {
 			lr.SetPosition(0, transform.position);
 			lr.SetPosition(1, child.transform.position);
 			lr.material = new Material(Shader.Find ("Particles/Additive"));
-			lr.SetColors (Color.blue,Color.cyan);
+			if (isActive () && child.isActive ()) lr.SetColors (_lineOn,_lineOn);
+			else lr.SetColors (_lineOff,_lineOff);
 			lr.SetWidth (7.0f,5f);
 			child.drawLines ();
 		}
