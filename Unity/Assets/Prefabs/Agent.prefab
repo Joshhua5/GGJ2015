@@ -104,7 +104,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 09f69615cb04ad647960eaf124f90eeb, type: 2}
+  - {fileID: 2100000, guid: a69b19289ecfb82409aa1dfe4baadd3e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AISpeed: 75
   NextWaypointDistance: 10
-  FightDoorDistance: 30
+  FightDoorDistance: 40
   _animationHolder: {fileID: 192138}
   _initialHealth: 100
   _deathSound: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 5e7b748431150d845ac02d4feed95668, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: dcfdb569c2364ae4f91a70f952847a45, type: 2}
   initialSkinName: default
   calculateNormals: 0
   calculateTangents: 0

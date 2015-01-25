@@ -54,7 +54,7 @@ public class Door : MonoBehaviour
         }
         else
         {
-            _animation.state.SetAnimation(0, "Close", false);
+            _animation.state.SetAnimation(0, "close", false);
             AudioSource.PlayClipAtPoint(_closeSound, Camera.main.transform.position);
         }
         _animation.Update();

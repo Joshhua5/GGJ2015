@@ -1,0 +1,364 @@
+{
+"skeleton": { "hash": "VUCC3KKLhu2hpANwtxfkhd2ACq8", "spine": "2.1.08", "width": 130, "height": 18 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "door a", "parent": "root", "x": 50.55, "y": 8.69 },
+	{ "name": "door b", "parent": "root", "x": 81.94, "y": 8.42 }
+],
+"slots": [
+	{ "name": "base", "bone": "root", "attachment": "base" },
+	{ "name": "meter 10", "bone": "root", "attachment": "meter 10" },
+	{ "name": "meter 9", "bone": "root", "attachment": "meter 9" },
+	{ "name": "meter 8", "bone": "root", "attachment": "meter 8" },
+	{ "name": "meter 7", "bone": "root", "attachment": "meter 7" },
+	{ "name": "meter 6", "bone": "root", "attachment": "meter 6" },
+	{ "name": "meter 5", "bone": "root", "attachment": "meter 5" },
+	{ "name": "meter 4", "bone": "root", "attachment": "meter 4" },
+	{ "name": "meter 3", "bone": "root", "attachment": "meter 3" },
+	{ "name": "meter 2", "bone": "root", "attachment": "meter 2" },
+	{ "name": "meter 1", "bone": "root", "attachment": "meter 1" },
+	{ "name": "Active", "bone": "root", "attachment": "Active" },
+	{ "name": "door b", "bone": "door b", "attachment": "door b" },
+	{ "name": "door a", "bone": "door a", "attachment": "door a" },
+	{ "name": "wall", "bone": "root", "attachment": "wall" }
+],
+"skins": {
+	"default": {
+		"Active": {
+			"Active": { "x": 65.5, "y": 9, "width": 65, "height": 18 }
+		},
+		"base": {
+			"base": { "x": 65.5, "y": 9, "width": 67, "height": 18 }
+		},
+		"door a": {
+			"door a": { "x": -2.05, "y": 0.3, "width": 35, "height": 10 }
+		},
+		"door b": {
+			"door b": { "x": -1.44, "y": 0.57, "width": 35, "height": 10 }
+		},
+		"meter 1": {
+			"meter 1": { "x": 65, "y": 9, "width": 62, "height": 18 }
+		},
+		"meter 10": {
+			"meter 10": { "x": 65, "y": 9, "width": 8, "height": 18 }
+		},
+		"meter 2": {
+			"meter 2": { "x": 65, "y": 9, "width": 56, "height": 18 }
+		},
+		"meter 3": {
+			"meter 3": { "x": 65, "y": 9, "width": 50, "height": 18 }
+		},
+		"meter 4": {
+			"meter 4": { "x": 65, "y": 9, "width": 44, "height": 18 }
+		},
+		"meter 5": {
+			"meter 5": { "x": 65, "y": 9, "width": 38, "height": 18 }
+		},
+		"meter 6": {
+			"meter 6": { "x": 65, "y": 9, "width": 32, "height": 18 }
+		},
+		"meter 7": {
+			"meter 7": { "x": 65, "y": 9, "width": 26, "height": 18 }
+		},
+		"meter 8": {
+			"meter 8": { "x": 65, "y": 9, "width": 20, "height": 18 }
+		},
+		"meter 9": {
+			"meter 9": { "x": 65, "y": 9, "width": 14, "height": 18 }
+		},
+		"wall": {
+			"wall": { "x": 65, "y": 9, "width": 130, "height": 18 }
+		}
+	}
+},
+"animations": {
+	"charge": {
+		"slots": {
+			"Active": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1333, "name": null },
+					{ "time": 0.7333, "name": "Active" }
+				]
+			},
+			"base": {
+				"attachment": [
+					{ "time": 0.1333, "name": "base" }
+				]
+			},
+			"meter 1": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.0666, "name": "meter 1" },
+					{ "time": 0.1333, "name": "meter 1" }
+				]
+			},
+			"meter 2": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.0666, "name": null },
+					{ "time": 0.1333, "name": "meter 2" }
+				]
+			},
+			"meter 3": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1333, "name": null },
+					{ "time": 0.2, "name": "meter 3" }
+				]
+			},
+			"meter 4": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.2666, "name": "meter 4" }
+				]
+			},
+			"meter 5": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": "meter 5" }
+				]
+			},
+			"meter 6": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.4, "name": "meter 6" }
+				]
+			},
+			"meter 7": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.4666, "name": "meter 7" }
+				]
+			},
+			"meter 8": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.5333, "name": "meter 8" }
+				]
+			},
+			"meter 9": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.6, "name": "meter 9" }
+				]
+			},
+			"meter 10": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.6666, "name": "meter 10" }
+				]
+			}
+		}
+	},
+	"close": {
+		"slots": {
+			"Active": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"base": {
+				"attachment": [
+					{ "time": 0, "name": "base" },
+					{ "time": 0.3333, "name": "base" }
+				]
+			},
+			"door a": {
+				"attachment": [
+					{ "time": 0, "name": "door a" },
+					{ "time": 0.3333, "name": "door a" }
+				]
+			},
+			"door b": {
+				"attachment": [
+					{ "time": 0, "name": "door b" },
+					{ "time": 0.3333, "name": "door b" }
+				]
+			},
+			"meter 1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"meter 10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"wall": {
+				"attachment": [
+					{ "time": 0, "name": "wall" },
+					{ "time": 0.3333, "name": "wall" }
+				]
+			}
+		},
+		"bones": {
+			"door a": {
+				"translate": [
+					{ "time": 0, "x": -31.06, "y": 0 },
+					{ "time": 0.3333, "x": -0.26, "y": 0 }
+				]
+			},
+			"door b": {
+				"translate": [
+					{ "time": 0, "x": 31.32, "y": 0 },
+					{ "time": 0.3333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"open": {
+		"slots": {
+			"Active": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"base": {
+				"attachment": [
+					{ "time": 0, "name": "base" },
+					{ "time": 0.3333, "name": "base" }
+				]
+			},
+			"door a": {
+				"attachment": [
+					{ "time": 0, "name": "door a" },
+					{ "time": 0.3333, "name": "door a" }
+				]
+			},
+			"door b": {
+				"attachment": [
+					{ "time": 0, "name": "door b" },
+					{ "time": 0.3333, "name": "door b" }
+				]
+			},
+			"meter 1": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 2": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 3": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 4": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 5": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 6": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 7": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 8": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 9": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"meter 10": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"wall": {
+				"attachment": [
+					{ "time": 0, "name": "wall" },
+					{ "time": 0.3333, "name": "wall" }
+				]
+			}
+		},
+		"bones": {
+			"door a": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": -30.79, "y": 0 }
+				]
+			},
+			"door b": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 31.86, "y": 0 }
+				]
+			}
+		},
+		"drawOrder": [
+			{ "time": 0 },
+			{ "time": 0.3333 }
+		]
+	}
+}
+}

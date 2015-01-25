@@ -191,7 +191,7 @@ public class Agent : MonoBehaviour
                 _path = null;
                 _currentWaypoint = 0;
                 _state = AgentState.AttackingDoor;
-                _animation.state.SetAnimation(0, "standing", true);
+                _animation.state.SetAnimation(0, "attack door", true);
             }
             else if (Vector3.Distance(transform.position, nextWaypoint) < NextWaypointDistance)
             {

@@ -29,7 +29,6 @@ GameObject:
   - 33: {fileID: 3374674}
   - 65: {fileID: 6574674}
   - 114: {fileID: 11463522}
-  - 82: {fileID: 8258390}
   m_Layer: 8
   m_Name: DoorPrefab1x4
   m_TagString: Untagged
@@ -202,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _openSound: {fileID: 8300000, guid: 07fb7f9d011de4da0a915b85a1503504, type: 3}
   _closeSound: {fileID: 8300000, guid: 07fb7f9d011de4da0a915b85a1503504, type: 3}
+  _doorStartingHP: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

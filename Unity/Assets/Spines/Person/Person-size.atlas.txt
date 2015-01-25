@@ -1,0 +1,97 @@
+
+Person-size.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+head
+  rotate: false
+  xy: 113, 54
+  size: 59, 61
+  orig: 59, 61
+  offset: 0, 0
+  index: -1
+left arm bottom
+  rotate: false
+  xy: 174, 59
+  size: 31, 56
+  orig: 31, 56
+  offset: 0, 0
+  index: -1
+left arm top
+  rotate: false
+  xy: 240, 65
+  size: 30, 50
+  orig: 30, 50
+  offset: 0, 0
+  index: -1
+left foot
+  rotate: false
+  xy: 304, 73
+  size: 31, 42
+  orig: 31, 42
+  offset: 0, 0
+  index: -1
+left leg bottom
+  rotate: false
+  xy: 2, 2
+  size: 30, 29
+  orig: 30, 29
+  offset: 0, 0
+  index: -1
+left leg top
+  rotate: false
+  xy: 34, 4
+  size: 30, 27
+  orig: 30, 27
+  offset: 0, 0
+  index: -1
+right arm top
+  rotate: false
+  xy: 272, 65
+  size: 30, 50
+  orig: 30, 50
+  offset: 0, 0
+  index: -1
+right foot
+  rotate: false
+  xy: 337, 73
+  size: 31, 42
+  orig: 31, 42
+  offset: 0, 0
+  index: -1
+right leg bottom
+  rotate: false
+  xy: 370, 86
+  size: 30, 29
+  orig: 30, 29
+  offset: 0, 0
+  index: -1
+right leg top
+  rotate: false
+  xy: 402, 88
+  size: 30, 27
+  orig: 30, 27
+  offset: 0, 0
+  index: -1
+rightarm bottom
+  rotate: false
+  xy: 207, 59
+  size: 31, 56
+  orig: 31, 56
+  offset: 0, 0
+  index: -1
+shoudler
+  rotate: false
+  xy: 2, 75
+  size: 109, 40
+  orig: 109, 40
+  offset: 0, 0
+  index: -1
+shoudler stand
+  rotate: false
+  xy: 2, 33
+  size: 109, 40
+  orig: 109, 40
+  offset: 0, 0
+  index: -1
