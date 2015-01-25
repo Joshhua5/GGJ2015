@@ -114,7 +114,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1544f1d88fb78458e6a4903aef452c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agents: []
+  _agents:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _scoreLabel: {fileID: 11409068}
   _survivorLabel: {fileID: 11409066}
   _deathLabel: {fileID: 11409064}
@@ -292,7 +307,7 @@ Canvas:
   m_GameObject: {fileID: 109070}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
