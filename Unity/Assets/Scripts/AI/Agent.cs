@@ -42,6 +42,7 @@ public class Agent : MonoBehaviour
     private float _health;
 
     private float _speed;
+    private Door _currentDoor;
 
     // Raycast details
     private bool _raycastHit;
@@ -64,14 +65,21 @@ public class Agent : MonoBehaviour
 
         if (room != null && room.HasDoor && !room.FirstDoor.Open)
         {
-            _seeker.StartPath(transform.position, room.FirstDoor.transform.position, OnDoorPathComplete);
-            _doorDestination = room.FirstDoor.transform.position;
+            _currentDoor = room.FirstDoor;
+            _seeker.StartPath(transform.position, _currentDoor.transform.position, OnDoorPathComplete);
+            _doorDestination = _currentDoor.transform.position;
             room.FirstDoor.OnDoorStateChanged += FirstDoor_OnDoorStateChanged;
         }
         else
         {
             _seeker.StartPath(transform.position, destination, OnPathComplete);
         }
+    }
+
+    void OnDestroy()
+    {
+        if (_currentDoor != null)
+            _currentDoor.OnDoorStateChanged -= FirstDoor_OnDoorStateChanged;
     }
 
     void FirstDoor_OnDoorStateChanged(bool isOpen)

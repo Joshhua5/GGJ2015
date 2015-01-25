@@ -12,14 +12,15 @@ public class Navigator : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<Agent>();
-        //_agent.SetDestination(destination.position);
+        _agent.SetDestination(destination.position);
         AstarPath.OnGraphsUpdated += OnGraphsUpdated;
     }
 
     void OnGraphsUpdated(AstarPath script)
     {
         Debug.Log("Graph updated");
-        _agent.SetDestination(destination.position);
+        if (_agent != null)
+            _agent.SetDestination(destination.position);
     }
 
     // Update is called once per frame

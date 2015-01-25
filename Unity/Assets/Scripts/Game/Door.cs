@@ -49,11 +49,6 @@ public class Door : MonoBehaviour
         if (HP <= 0) open = true; // override, can't close a broken door
         Open = open;
 
-        var guo = new GraphUpdateObject(bounds);
-        guo.modifyWalkability = true;
-        guo.setWalkability = Open;
-        guo.updatePhysics = false;
-
         if (Open)
         {
             _animation.state.SetAnimation(0, "open", false);
@@ -68,8 +63,6 @@ public class Door : MonoBehaviour
 
         if (OnDoorStateChanged != null)
             OnDoorStateChanged(open);
-
-        AstarPath.active.UpdateGraphs(guo);
     }
 
     void OnMouseDown() {
