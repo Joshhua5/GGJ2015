@@ -35,7 +35,7 @@ public class Agent : MonoBehaviour
     private float _initialHealth = 100;
 
     [SerializeField]
-    private AudioSource _deathSound;
+    private AudioClip[] _deathSound;
 
     [SerializeField]
     private float _firePenalty = 10;
@@ -163,7 +163,8 @@ public class Agent : MonoBehaviour
             // Dead
             if (OnAgentDeath != null)
                 OnAgentDeath(this);
-            _deathSound.Play();
+            AudioSource.PlayClipAtPoint(_deathSound[Random.Range(0, _deathSound.Length)], Camera.main.transform.position);
+            
         }
 
 

@@ -63,8 +63,8 @@ public class Game : MonoSingleton<Game>
 
     private void UpdateLabels()
     {
-        _scoreLabel.text = "Score: " + _score;
+        _scoreLabel.text = "SCORE: " + _score;
         _survivorLabel.text = "SURVIVIORS: " + _surviviors;
-        _deathLabel.text = "SOULS LOST: " + _deaths;
+        _deathLabel.text = "LOST SOULS: " + _deaths;
     }
 }
