@@ -18,7 +18,18 @@ public class Agent : MonoBehaviour
     [SerializeField]
     private GameObject _animationHolder;
 
+    [SerializeField]
+    private float _initialHealth;
+
+    [SerializeField]
+    private float _firePenalty; 
+    private float _health;
+
     private float _speed;
+
+    // Raycast details
+    private bool _raycastHit;
+    private RaycastHit _hit;
 
     // Use this for initialization
     void Awake()
@@ -88,15 +99,26 @@ public class Agent : MonoBehaviour
             _path = null;
             _currentWaypoint = 0;
         }
+
+
+        Ray ray = new Ray(transform.position, Vector3.down);  
+
+        _raycastHit = Physics.Raycast(ray, out _hit, 100, 1 << Layers.Ground);
+        if (_raycastHit)
+            // Check if object is fire
+            if (_hit.collider.gameObject.GetComponent<Fire>() != null)
+                _health -= _firePenalty * Time.deltaTime;
+
+        if (_health < 0)
+            // Dead
+            DestroyObject(this);
+
     }
 
     private Room GetCurrentRoom()
-    {
-        Ray ray = new Ray(transform.position, Vector3.down);
-        RaycastHit hit;
-        
-        if (Physics.Raycast(ray, out hit, 100, 1 << Layers.Ground))
-            return hit.collider.gameObject.GetComponent<Room>();
+    { 
+        if (_raycastHit)
+            return _hit.collider.gameObject.GetComponent<Room>();
         else 
             return null; 
     }
