@@ -1,0 +1,111 @@
+
+Door Unit.png
+size: 1024,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Active
+  rotate: false
+  xy: 203, 2
+  size: 65, 18
+  orig: 65, 18
+  offset: 0, 0
+  index: -1
+base
+  rotate: false
+  xy: 134, 2
+  size: 67, 18
+  orig: 67, 18
+  offset: 0, 0
+  index: -1
+door a
+  rotate: false
+  xy: 564, 10
+  size: 35, 10
+  orig: 35, 10
+  offset: 0, 0
+  index: -1
+door b
+  rotate: false
+  xy: 601, 10
+  size: 35, 10
+  orig: 35, 10
+  offset: 0, 0
+  index: -1
+meter 1
+  rotate: false
+  xy: 270, 2
+  size: 62, 18
+  orig: 62, 18
+  offset: 0, 0
+  index: -1
+meter 10
+  rotate: false
+  xy: 704, 2
+  size: 8, 18
+  orig: 8, 18
+  offset: 0, 0
+  index: -1
+meter 2
+  rotate: false
+  xy: 334, 2
+  size: 56, 18
+  orig: 56, 18
+  offset: 0, 0
+  index: -1
+meter 3
+  rotate: false
+  xy: 392, 2
+  size: 50, 18
+  orig: 50, 18
+  offset: 0, 0
+  index: -1
+meter 4
+  rotate: false
+  xy: 444, 2
+  size: 44, 18
+  orig: 44, 18
+  offset: 0, 0
+  index: -1
+meter 5
+  rotate: false
+  xy: 490, 2
+  size: 38, 18
+  orig: 38, 18
+  offset: 0, 0
+  index: -1
+meter 6
+  rotate: false
+  xy: 530, 2
+  size: 32, 18
+  orig: 32, 18
+  offset: 0, 0
+  index: -1
+meter 7
+  rotate: false
+  xy: 638, 2
+  size: 26, 18
+  orig: 26, 18
+  offset: 0, 0
+  index: -1
+meter 8
+  rotate: false
+  xy: 666, 2
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+meter 9
+  rotate: false
+  xy: 688, 2
+  size: 14, 18
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+wall
+  rotate: false
+  xy: 2, 2
+  size: 130, 18
+  orig: 130, 18
+  offset: 0, 0
+  index: -1
