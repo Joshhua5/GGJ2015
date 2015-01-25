@@ -140,9 +140,6 @@ public class WaterNode : MonoBehaviour {
 		{
 			// Should have turn off sound
 			if (isActive ()) {
-                if(room.Fire != null)
-                    DestroyObject(room.Fire);
-                room.Fire = null;
 				ws.releaseWater ();
 				connected = false;
 			}
@@ -156,6 +153,9 @@ public class WaterNode : MonoBehaviour {
 				// Only spark if being turned on, 
 				if (_triggerEffect != null)
 					_triggerEffect.Play();
+                if(room.Fire != null)
+                    DestroyObject(room.Fire);
+                //room.Fire = null;
 				ws.useWater ();
 				connected = true;
 			}
