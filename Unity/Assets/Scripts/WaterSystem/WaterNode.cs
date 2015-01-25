@@ -9,7 +9,10 @@ public class WaterNode : MonoBehaviour {
 	public bool connected = true;
 	public bool consumesPower;
 	public int roomNo;
-	
+
+    [SerializeField]
+    private Room room;
+
 	// Particle Effect
 	public ParticleSystem triggerEffect;
 	private ParticleSystem _triggerEffect;
@@ -128,6 +131,9 @@ public class WaterNode : MonoBehaviour {
 		{
 			// Should have turn off sound
 			if (isActive ()) {
+                if(room.Fire != null)
+                    DestroyObject(room.Fire);
+                room.Fire = null;
 				ws.releaseWater ();
 				connected = false;
 			}
@@ -144,8 +150,7 @@ public class WaterNode : MonoBehaviour {
 				ws.useWater ();
 				connected = true;
 			}
-		}
-		
+		} 
 		//this.audio.Play ();
 		//Debug.Log (""+roomNo+": toggle pressed. on="+on);
 		updateChildren ();

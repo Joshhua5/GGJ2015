@@ -22,6 +22,9 @@ public class Agent : MonoBehaviour
     private float _initialHealth = 100;
 
     [SerializeField]
+    private AudioSource _deathSound;
+
+    [SerializeField]
     private float _firePenalty = 10; 
     private float _health;
 
@@ -110,8 +113,11 @@ public class Agent : MonoBehaviour
                 _health -= _firePenalty * Time.deltaTime;
 
         if (_health < 0)
+        {
             // Dead
             DestroyObject(this);
+            _deathSound.Play();
+        }
 
     }
 

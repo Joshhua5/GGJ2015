@@ -10,6 +10,12 @@ public class Door : MonoBehaviour
     [SerializeField]
     private uint chargeTime = 5;
 
+    [SerializeField]
+    private AudioSource _openSound;
+    
+    [SerializeField]
+    private AudioSource _closeSound;
+
     private float charge;
     private Room room;
     private SkeletonAnimation _animation;
@@ -37,10 +43,15 @@ public class Door : MonoBehaviour
         guo.updatePhysics = false;
 
         if (Open)
+        {
             _animation.state.SetAnimation(0, "open", false);
+            _openSound.Play();
+        }
         else
+        {
             _animation.state.SetAnimation(0, "Close", false);
-
+            _closeSound.Play();
+        }
         _animation.Update();
 
         Debug.Log("Door: " + open);

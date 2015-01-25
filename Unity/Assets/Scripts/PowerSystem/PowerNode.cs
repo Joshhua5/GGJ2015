@@ -17,6 +17,10 @@ public class PowerNode : MonoBehaviour {
     public ParticleSystem triggerEffect;
     private ParticleSystem _triggerEffect;
 
+    // Audio
+    private AudioSource _triggerOnSound;
+    private AudioSource _triggerOffSound;
+
 	private PowerSystem ps;
 	private LineRenderer lineIn = null;
 
@@ -158,6 +162,7 @@ public class PowerNode : MonoBehaviour {
 			if (isActive ()) {
 				ps.releasePower ();
 				connected = false;
+                _triggerOffSound.Play();
 			}
 			on = false;
 		} 
@@ -169,6 +174,8 @@ public class PowerNode : MonoBehaviour {
                  // Only spark if being turned on, 
                 if (_triggerEffect != null)
                     _triggerEffect.Play();
+                _triggerOnSound.Play();
+
 				ps.usePower ();
 				connected = true;
 			}

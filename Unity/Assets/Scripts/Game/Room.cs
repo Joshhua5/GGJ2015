@@ -11,6 +11,8 @@ public class Room : MonoBehaviour
 
 	public PowerNode powerNode;
 
+    public Fire Fire;
+
     public bool HasDoor
     {
         get
@@ -27,5 +29,5 @@ public class Room : MonoBehaviour
         {
             return _doors[0];
         }
-    }
+    } 
 }
