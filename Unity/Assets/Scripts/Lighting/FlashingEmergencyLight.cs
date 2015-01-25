@@ -5,6 +5,7 @@ public class FlashingEmergencyLight : MonoBehaviour {
 
 	public GameObject emergencyLightFlash;
 	private bool lightOn;
+	private float lightFlashInterval;
 
 	void Start () {
 	
@@ -17,7 +18,8 @@ public class FlashingEmergencyLight : MonoBehaviour {
 	void FixedUpdate () {
 	
 		if (lightOn) {
-			StartCoroutine(lightFlash(1));
+			lightFlashInterval = Random.Range (0.1F, 0.5F);
+			StartCoroutine(lightFlash(lightFlashInterval));
 	}
 
 	}
@@ -26,10 +28,8 @@ IEnumerator lightFlash(float flashInterval){
 
 		lightOn = false;
 		emergencyLightFlash.gameObject.SetActive (false);
-		Debug.Log ("Light Off");
 		yield return new WaitForSeconds (flashInterval);
 		emergencyLightFlash.gameObject.SetActive (true);
-		Debug.Log ("Light Off");
 		yield return new WaitForSeconds (flashInterval);
 		lightOn = true;
 	}

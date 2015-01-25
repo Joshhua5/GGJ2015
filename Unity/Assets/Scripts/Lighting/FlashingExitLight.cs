@@ -26,10 +26,8 @@ IEnumerator lightFlash(float flashInterval){
 
 		lightOn = false;
 		emergencyLightFlash.gameObject.SetActive (false);
-		Debug.Log ("Light Off");
 		yield return new WaitForSeconds (flashInterval);
 		emergencyLightFlash.gameObject.SetActive (true);
-		Debug.Log ("Light Off");
 		yield return new WaitForSeconds (flashInterval);
 		lightOn = true;
 	}

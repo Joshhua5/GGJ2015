@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 429768}
   - 108: {fileID: 10829768}
   m_Layer: 0
-  m_Name: Room5Lighting
+  m_Name: RoomLighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: 1, g: .551470578, b: .551470578, a: 1}
+  m_Color: {r: 1, g: .141379297, b: .141379297, a: 1}
   m_Intensity: 3.79999995
   m_Range: 500
   m_SpotAngle: 30
