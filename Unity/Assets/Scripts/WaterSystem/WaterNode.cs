@@ -41,8 +41,15 @@ public class WaterNode : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isActive()) renderer.material = onMaterial;
-        else renderer.material = offMaterial;
+        
+	}
+
+	void updateState(){
+		if (isActive()) renderer.material = onMaterial;
+		else renderer.material = offMaterial;
+		if (isActive ()) room.setHasWater(true);
+		else room.setHasWater(false);
+		Debug.Log ("called update on room. hasWater = " + room.HasWater());
 	}
 	
 	void OnMouseDown(){
@@ -88,6 +95,7 @@ public class WaterNode : MonoBehaviour {
 			if (ws.hasWater () && on){ 
 				connected = true;
 				ws.useWater();
+				updateState();
 			}
 		}return true;
 	}
@@ -97,6 +105,7 @@ public class WaterNode : MonoBehaviour {
 		if (connected) {
 			if (isActive ()) ws.releaseWater ();
 			connected = false;
+			updateState();
 		}
 	}
 	
@@ -162,6 +171,7 @@ public class WaterNode : MonoBehaviour {
 		} 
 		//this.audio.Play ();
 	    Debug.Log (""+roomNo+": toggle pressed. on="+on);
+		updateState();
 		updateChildren ();
 	}
 	

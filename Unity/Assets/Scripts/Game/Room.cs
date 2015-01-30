@@ -9,12 +9,21 @@ public class Room : MonoBehaviour
     [SerializeField]
     private Door[] _doors;
 
+	[SerializeField]
+	private bool waterOn = false;
+
 	public PowerNode powerNode;
 
     public GameObject Fire;
 
     [SerializeField]
     private Light _roomLight;
+
+	public bool HasWater(){
+		return waterOn;
+	}
+	
+	public void setHasWater(bool state){waterOn = state;}
 
     public bool HasDoor
     {

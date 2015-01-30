@@ -10,6 +10,9 @@ public class Fire : MonoBehaviour
     [SerializeField]
     private float spawnRate;
 
+	[SerializeField]
+	private Room room;
+
     float frontDistance, backDistance, leftDistance, rightDistance;
     float charge;
     // Use this for initialization
@@ -36,71 +39,77 @@ public class Fire : MonoBehaviour
         
     }
 
-
+	public void setRoom(Room room){
+		this.room = room;
+	}
 
     // Update is called once per frame
     void Update()
     {
         Vector3 modifier = new Vector3(0, 0, 0);
         charge += Time.deltaTime;
+		if (room.HasWater()) Destroy(this.gameObject);
+		else{
         // Possible to create fire nodes that don't spread to keep things in control
         if (charge > spawnRate)
         {
             charge = 0;
-
-            if (frontDistance > 32)
-            {
-                modifier = Vector3.forward;
-                frontDistance = 0;
-            }
-            else if (backDistance > 32)
-            {
-                modifier = Vector3.back;
-                backDistance = 0;
-            }
-            else if (leftDistance > 32)
-            {
-                modifier = Vector3.left;
-                leftDistance = 0;
-            }
-            else if (rightDistance > 32)
-            {
-                modifier = Vector3.right;
-                rightDistance = 0;
-            }
-             
-            RaycastHit hit;
-
-            // Consider making 100 and then assume there's a large gap until a wall
-            if (Physics.Raycast(new Ray(transform.position + (modifier * 16) + (Vector3.up * 20), Vector3.down), out hit, 50, 1 << Layers.Obstacles))
-                // Stop fire from expanding back into fire
-                if (hit.collider.gameObject.GetComponent<Fire>() != null)
-                {
-                    // If it failed to create an object here, don't try again
-                    if (modifier == Vector3.forward)
-                        frontDistance = 0;
-                    if (modifier == Vector3.back) 
-                        backDistance = 0;
-                    if (modifier == Vector3.left)
-                        leftDistance = 0;
-                    if (modifier == Vector3.right)
-                        rightDistance = 0;
-
-                    modifier.Set(0, 0, 0);
-
-                }    
-
-            if (!(modifier.x == 0 && modifier.y == 0 && modifier.z == 0))
-            { 
-                // Spawn new fire
-                GameObject newFire = (GameObject)Instantiate(fireObject);
-                newFire.transform.parent = this.transform;
-                newFire.transform.localPosition = new Vector3(0, 0, 0);
-
-                newFire.transform.position += modifier * 16;
-                // Swap afterwards to be exluded from the raycast
-                newFire.gameObject.layer = Layers.Obstacles;
-            } 
+			if (!room.HasWater ()){
+	            if (frontDistance > 32)
+	            {
+	                modifier = Vector3.forward;
+	                frontDistance = 0;
+	            }
+	            else if (backDistance > 32)
+	            {
+	                modifier = Vector3.back;
+	                backDistance = 0;
+	            }
+	            else if (leftDistance > 32)
+	            {
+	                modifier = Vector3.left;
+	                leftDistance = 0;
+	            }
+	            else if (rightDistance > 32)
+	            {
+	                modifier = Vector3.right;
+	                rightDistance = 0;
+	            }
+	             
+	            RaycastHit hit;
+	
+	            // Consider making 100 and then assume there's a large gap until a wall
+	            if (Physics.Raycast(new Ray(transform.position + (modifier * 16) + (Vector3.up * 20), Vector3.down), out hit, 50, 1 << Layers.Obstacles))
+	                // Stop fire from expanding back into fire
+	                if (hit.collider.gameObject.GetComponent<Fire>() != null)
+	                {
+	                    // If it failed to create an object here, don't try again
+	                    if (modifier == Vector3.forward)
+	                        frontDistance = 0;
+	                    if (modifier == Vector3.back) 
+	                        backDistance = 0;
+	                    if (modifier == Vector3.left)
+	                        leftDistance = 0;
+	                    if (modifier == Vector3.right)
+	                        rightDistance = 0;
+	
+	                    modifier.Set(0, 0, 0);
+	
+	                }    
+	
+	            if (!(modifier.x == 0 && modifier.y == 0 && modifier.z == 0))
+	            { 
+	                // Spawn new fire
+	                GameObject newFire = (GameObject)Instantiate(fireObject);
+	                newFire.transform.parent = this.transform;
+	                newFire.transform.localPosition = new Vector3(0, 0, 0);
+	
+	                newFire.transform.position += modifier * 16;
+	                // Swap afterwards to be exluded from the raycast
+	                newFire.gameObject.layer = Layers.Obstacles;
+	            } 
+	        }
+        }
         }
     }
 }

@@ -20,12 +20,16 @@ public class FireSpawner : MonoBehaviour {
         _charge += Time.deltaTime;
 	    if(_charge > _spawnRate){
             int roomId = Random.Range(0, rooms.Length);
-            _charge = 0;
-            // Spawn fire
-            GameObject obj = (GameObject)Instantiate(fire); 
-            obj.transform.position = rooms[roomId].transform.localPosition + ((Vector3.right + Vector3.forward) * 64);
-            obj.transform.position = new Vector3(obj.transform.position.x, 0 , obj.transform.position.y);
-            rooms[roomId].GetComponentInParent<Room>().Fire = obj;
+			Room r = rooms[roomId].GetComponentInParent<Room>();
+			_charge = 0;
+			if (!r.HasWater()){
+            	// Spawn fire
+            	GameObject obj = (GameObject)Instantiate(fire); 
+            	obj.transform.position = rooms[roomId].transform.localPosition + ((Vector3.right + Vector3.forward) * 64);
+            	obj.transform.position = new Vector3(obj.transform.position.x, 0 , obj.transform.position.y);
+            	rooms[roomId].GetComponentInParent<Room>().Fire = obj;
+				obj.GetComponentInParent<Fire>().setRoom(r);
+			}
         }
 	}
 }
