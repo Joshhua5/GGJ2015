@@ -1,0 +1,97 @@
+
+Water Supply.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+base
+  rotate: false
+  xy: 2, 2
+  size: 63, 123
+  orig: 63, 123
+  offset: 0, 0
+  index: -1
+light 1
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+light 8
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+light 6
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+light 5
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+light 4
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+light 2
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+light 7
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+light 3
+  rotate: false
+  xy: 67, 90
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+spin 1
+  rotate: false
+  xy: 67, 103
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+spin 2
+  rotate: false
+  xy: 67, 103
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+spin 4
+  rotate: false
+  xy: 67, 103
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+spin 3
+  rotate: false
+  xy: 67, 103
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1

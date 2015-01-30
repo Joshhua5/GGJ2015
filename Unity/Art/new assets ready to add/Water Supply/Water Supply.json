@@ -1,0 +1,160 @@
+{
+"skeleton": { "hash": "zbT8sV+zqrgYxt312ykFut6qy2A", "spine": "2.1.09", "width": 63, "height": 123 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "spin 1", "parent": "root", "x": 16.15, "y": 23.9 },
+	{ "name": "spin 2", "parent": "root", "x": 16.08, "y": 51.87 },
+	{ "name": "spin 3", "parent": "root", "x": 16.09, "y": 79.84 },
+	{ "name": "spin 4", "parent": "root", "x": 16.09, "y": 107.96 }
+],
+"slots": [
+	{ "name": "base", "bone": "root", "attachment": "base" },
+	{ "name": "spin 1", "bone": "spin 1", "attachment": "spin 1" },
+	{ "name": "spin 2", "bone": "spin 2", "attachment": "spin 2" },
+	{ "name": "spin 3", "bone": "spin 3", "attachment": "spin 3" },
+	{ "name": "spin 4", "bone": "spin 4", "attachment": "spin 4" },
+	{ "name": "light 1", "bone": "root", "attachment": "light 1" },
+	{ "name": "light 2", "bone": "root", "attachment": "light 2" },
+	{ "name": "light 3", "bone": "root", "attachment": "light 3" },
+	{ "name": "light 4", "bone": "root", "attachment": "light 4" },
+	{ "name": "light 5", "bone": "root", "attachment": "light 5" },
+	{ "name": "light 6", "bone": "root", "attachment": "light 6" },
+	{ "name": "light 7", "bone": "root", "attachment": "light 7" },
+	{ "name": "light 8", "bone": "root", "attachment": "light 8" }
+],
+"skins": {
+	"default": {
+		"base": {
+			"base": { "x": 33.5, "y": 63.5, "width": 63, "height": 123 }
+		},
+		"light 1": {
+			"light 1": { "x": 54, "y": 20.5, "width": 14, "height": 11 }
+		},
+		"light 2": {
+			"light 2": { "x": 54, "y": 32.5, "width": 14, "height": 11 }
+		},
+		"light 3": {
+			"light 3": { "x": 54, "y": 45.5, "width": 14, "height": 11 }
+		},
+		"light 4": {
+			"light 4": { "x": 54, "y": 57.5, "width": 14, "height": 11 }
+		},
+		"light 5": {
+			"light 5": { "x": 54, "y": 69.5, "width": 14, "height": 11 }
+		},
+		"light 6": {
+			"light 6": { "x": 54, "y": 82.5, "width": 14, "height": 11 }
+		},
+		"light 7": {
+			"light 7": { "x": 54, "y": 94.5, "width": 14, "height": 11 }
+		},
+		"light 8": {
+			"light 8": { "x": 54, "y": 106.5, "width": 14, "height": 11 }
+		},
+		"spin 1": {
+			"spin 1": { "x": -0.15, "y": 0.09, "width": 22, "height": 22 }
+		},
+		"spin 2": {
+			"spin 2": { "x": -0.08, "y": 0.12, "width": 22, "height": 22 }
+		},
+		"spin 3": {
+			"spin 3": { "x": -0.09, "y": 0.15, "width": 22, "height": 22 }
+		},
+		"spin 4": {
+			"spin 4": { "x": -0.09, "y": 0.03, "width": 22, "height": 22 }
+		}
+	}
+},
+"animations": {
+	"Running": {
+		"slots": {
+			"light 1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"light 2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"light 3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"light 4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"light 5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"light 6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"light 7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"light 8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"spin 1": {
+				"attachment": [
+					{ "time": 0, "name": "spin 1" }
+				]
+			},
+			"spin 2": {
+				"attachment": [
+					{ "time": 0, "name": "spin 2" }
+				]
+			},
+			"spin 3": {
+				"attachment": [
+					{ "time": 0, "name": "spin 3" }
+				]
+			},
+			"spin 4": {
+				"attachment": [
+					{ "time": 0, "name": "spin 4" }
+				]
+			}
+		},
+		"bones": {
+			"spin 1": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.1666, "angle": 90 }
+				]
+			},
+			"spin 2": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.1666, "angle": 90 }
+				]
+			},
+			"spin 3": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.1666, "angle": 90 }
+				]
+			},
+			"spin 4": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.1666, "angle": 90 }
+				]
+			}
+		}
+	}
+}
+}
