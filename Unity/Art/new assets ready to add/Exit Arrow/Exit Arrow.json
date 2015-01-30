@@ -1,0 +1,148 @@
+{
+"skeleton": { "hash": "Mz3vmGNxV4Fb7bEzlNHmUMLR8DY", "spine": "2.1.09", "width": 66, "height": 34.35 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "arrow 1", "parent": "root", "x": 52.89, "y": 17.51 },
+	{ "name": "arrow 2", "parent": "root", "x": 45.02, "y": 17.51 },
+	{ "name": "arrow 3", "parent": "root", "x": 38.4, "y": 16.88 },
+	{ "name": "arrow 4", "parent": "root", "x": 29.58, "y": 17.2 },
+	{ "name": "arrow 5", "parent": "root", "x": 22.34, "y": 16.25 },
+	{ "name": "arrow 6", "parent": "root", "x": 62.03, "y": 16.57 }
+],
+"slots": [
+	{ "name": "arrows dark copy", "bone": "root", "attachment": "arrows dark copy" },
+	{ "name": "arrows", "bone": "root", "attachment": "arrows" },
+	{ "name": "arrows dark", "bone": "root", "attachment": "arrows dark" },
+	{ "name": "arrow off", "bone": "root", "attachment": "arrow off" },
+	{ "name": "arrow on6", "bone": "arrow 6", "attachment": "arrow-half" },
+	{ "name": "arrow on1", "bone": "arrow 1", "attachment": "arrow-half" },
+	{ "name": "arrow on2", "bone": "arrow 2", "attachment": "arrow-half" },
+	{ "name": "arrow on3", "bone": "arrow 3", "attachment": "arrow-half" },
+	{ "name": "arrow on4", "bone": "arrow 4", "attachment": "arrow-half" },
+	{ "name": "arrow on5", "bone": "arrow 5", "attachment": "arrow-half" }
+],
+"skins": {
+	"default": {
+		"arrow off": {
+			"arrow off": { "x": 15, "y": 17, "width": 24, "height": 34 }
+		},
+		"arrow on1": {
+			"arrow on": { "y": -0.53, "width": 24, "height": 34 },
+			"arrow-half": { "y": -0.53, "width": 24, "height": 34 }
+		},
+		"arrow on2": {
+			"arrow on": { "x": 0.4, "y": -0.66, "width": 24, "height": 34 },
+			"arrow-half": { "x": 0.4, "y": -0.66, "width": 24, "height": 34 }
+		},
+		"arrow on3": {
+			"arrow on": { "width": 24, "height": 34 },
+			"arrow-half": { "width": 24, "height": 34 }
+		},
+		"arrow on4": {
+			"arrow on": { "x": 0.67, "width": 24, "height": 34 },
+			"arrow-half": { "x": 0.67, "width": 24, "height": 34 }
+		},
+		"arrow on5": {
+			"arrow on": { "y": 0.8, "width": 24, "height": 34 },
+			"arrow-half": { "y": 0.8, "width": 24, "height": 34 }
+		},
+		"arrow on6": {
+			"arrow on": { "x": -47.03, "y": 0.42, "width": 24, "height": 34 },
+			"arrow-half": { "x": -47.03, "y": 0.42, "width": 24, "height": 34 }
+		},
+		"arrows": {
+			"arrows": { "x": 34.5, "y": 17, "width": 63, "height": 34 }
+		},
+		"arrows dark": {
+			"arrows dark": { "x": 31, "y": 17, "width": 62, "height": 34 }
+		},
+		"arrows dark copy": {
+			"arrows dark copy": { "x": 33, "y": 17, "width": 66, "height": 34 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"arrow off": {
+				"attachment": [
+					{ "time": 0, "name": "arrow off" },
+					{ "time": 0.3, "name": "arrow off" }
+				]
+			},
+			"arrow on1": {
+				"attachment": [
+					{ "time": 0, "name": "arrow-half" },
+					{ "time": 0.1, "name": null },
+					{ "time": 0.2, "name": null },
+					{ "time": 0.3, "name": null },
+					{ "time": 0.4333, "name": "arrow on" }
+				]
+			},
+			"arrow on2": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1, "name": null },
+					{ "time": 0.2, "name": null },
+					{ "time": 0.3, "name": null },
+					{ "time": 0.3666, "name": "arrow on" },
+					{ "time": 0.4333, "name": "arrow-half" }
+				]
+			},
+			"arrow on3": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1, "name": null },
+					{ "time": 0.2, "name": null },
+					{ "time": 0.3, "name": "arrow on" },
+					{ "time": 0.3666, "name": "arrow-half" },
+					{ "time": 0.4333, "name": null }
+				]
+			},
+			"arrow on4": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1, "name": null },
+					{ "time": 0.2, "name": "arrow on" },
+					{ "time": 0.3, "name": "arrow-half" },
+					{ "time": 0.3666, "name": null }
+				]
+			},
+			"arrow on5": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1, "name": "arrow on" },
+					{ "time": 0.2, "name": "arrow-half" },
+					{ "time": 0.3, "name": null }
+				]
+			},
+			"arrow on6": {
+				"attachment": [
+					{ "time": 0, "name": "arrow on" },
+					{ "time": 0.1, "name": "arrow-half" },
+					{ "time": 0.2, "name": null },
+					{ "time": 0.3, "name": null }
+				]
+			},
+			"arrows": {
+				"attachment": [
+					{ "time": 0, "name": "arrows" },
+					{ "time": 0.3, "name": "arrows" }
+				]
+			},
+			"arrows dark": {
+				"attachment": [
+					{ "time": 0, "name": "arrows dark" },
+					{ "time": 0.3, "name": "arrows dark" }
+				]
+			},
+			"arrows dark copy": {
+				"attachment": [
+					{ "time": 0, "name": "arrows dark copy" },
+					{ "time": 0.3, "name": "arrows dark copy" }
+				]
+			}
+		}
+	}
+}
+}
