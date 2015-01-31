@@ -6,6 +6,7 @@ public class WaterSystem : MonoBehaviour {
 	public WaterNode root;
 	public int totalWater;
 	public int availableWater;
+    public WaterPump waterPump;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class WaterSystem : MonoBehaviour {
 	public bool useWater(){
 		if (hasWater ()) {
 			availableWater--;
+            waterPump.SetState(availableWater);
 			Debug.Log ("Use 1 unit. Power remaining = "+availableWater);
 			return true;
 		}
@@ -38,7 +40,8 @@ public class WaterSystem : MonoBehaviour {
 		if (availableWater < totalWater) 
 		{
 			availableWater++;
-			Debug.Log ("Release 1 unit. Water remaining = " + availableWater);
+            waterPump.SetState(availableWater);
+            Debug.Log("Release 1 unit. Water remaining = " + availableWater);
 			if (availableWater == 1) updateWaterSpread ();
 		}
 	}

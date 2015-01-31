@@ -1,0 +1,1388 @@
+{
+    "skeleton": {
+        "hash": "f6YJ76H8JqN5ZGF2ZqwkrsVvSXY",
+        "spine": "2.1.09",
+        "width": 63,
+        "height": 123
+    },
+    "bones": [
+        {
+            "name": "root"
+        },
+        {
+            "name": "light 1",
+            "parent": "root",
+            "x": 53.78,
+            "y": 21.04
+        },
+        {
+            "name": "light 2",
+            "parent": "root",
+            "x": 53.61,
+            "y": 32.77
+        },
+        {
+            "name": "light 3",
+            "parent": "root",
+            "x": 53.61,
+            "y": 45.89
+        },
+        {
+            "name": "light 4",
+            "parent": "root",
+            "x": 53.78,
+            "y": 58.14
+        },
+        {
+            "name": "light 5",
+            "parent": "root",
+            "x": 53.61,
+            "y": 69.87
+        },
+        {
+            "name": "light 6",
+            "parent": "root",
+            "x": 53.43,
+            "y": 83.17
+        },
+        {
+            "name": "light 7",
+            "parent": "root",
+            "x": 53.61,
+            "y": 95.07
+        },
+        {
+            "name": "light 8",
+            "parent": "root",
+            "x": 53.43,
+            "y": 107.32
+        },
+        {
+            "name": "spiner 1",
+            "parent": "root",
+            "x": 15.81,
+            "y": 23.84
+        },
+        {
+            "name": "spiner 2",
+            "parent": "root",
+            "x": 16.33,
+            "y": 51.84
+        },
+        {
+            "name": "spiner 3",
+            "parent": "root",
+            "x": 16.33,
+            "y": 80.19
+        },
+        {
+            "name": "spiner 4",
+            "parent": "root",
+            "x": 16.33,
+            "y": 106.97
+        }
+    ],
+    "slots": [
+        {
+            "name": "base",
+            "bone": "root",
+            "attachment": "base"
+        },
+        {
+            "name": "spiner",
+            "bone": "spiner 1",
+            "attachment": "spiner"
+        },
+        {
+            "name": "all lights",
+            "bone": "root"
+        },
+        {
+            "name": "blue light",
+            "bone": "light 1",
+            "attachment": "blue light"
+        },
+        {
+            "name": "blue light2",
+            "bone": "light 2",
+            "attachment": "blue light"
+        },
+        {
+            "name": "blue light3",
+            "bone": "light 3",
+            "attachment": "blue light"
+        },
+        {
+            "name": "blue light4",
+            "bone": "light 4",
+            "attachment": "blue light"
+        },
+        {
+            "name": "blue light5",
+            "bone": "light 5",
+            "attachment": "blue light"
+        },
+        {
+            "name": "blue light6",
+            "bone": "light 6",
+            "attachment": "blue light"
+        },
+        {
+            "name": "blue light7",
+            "bone": "light 7",
+            "attachment": "blue light"
+        },
+        {
+            "name": "blue light8",
+            "bone": "light 8",
+            "attachment": "blue light"
+        },
+        {
+            "name": "spiner2",
+            "bone": "spiner 2",
+            "attachment": "spiner"
+        },
+        {
+            "name": "spiner3",
+            "bone": "spiner 3",
+            "attachment": "spiner"
+        },
+        {
+            "name": "spiner4",
+            "bone": "spiner 4",
+            "attachment": "spiner"
+        }
+    ],
+    "skins": {
+        "default": {
+            "all lights": {
+                "all lights": {
+                    "x": 54,
+                    "y": 63.5,
+                    "width": 14,
+                    "height": 97
+                }
+            },
+            "base": {
+                "base": {
+                    "x": 33.5,
+                    "y": 63.5,
+                    "width": 63,
+                    "height": 123
+                }
+            },
+            "blue light": {
+                "blue light": {
+                    "x": 0.21,
+                    "y": -0.54,
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "blue light2": {
+                "blue light": {
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "blue light3": {
+                "blue light": {
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "blue light4": {
+                "blue light": {
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "blue light5": {
+                "blue light": {
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "blue light6": {
+                "blue light": {
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "blue light7": {
+                "blue light": {
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "blue light8": {
+                "blue light": {
+                    "width": 14,
+                    "height": 11
+                }
+            },
+            "spiner": {
+                "spiner": {
+                    "x": 0.18,
+                    "y": 0.15,
+                    "width": 22,
+                    "height": 22
+                }
+            },
+            "spiner2": {
+                "spiner": {
+                    "width": 22,
+                    "height": 22
+                }
+            },
+            "spiner3": {
+                "spiner": {
+                    "width": 22,
+                    "height": 22
+                }
+            },
+            "spiner4": {
+                "spiner": {
+                    "width": 22,
+                    "height": 22
+                }
+            }
+        }
+    },
+    "animations": {
+        "Off": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "On": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "OnSeven": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "OnSix": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "OnFive": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "OnFour": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "OnThree": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "OnTwo": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        },
+        "OnOne": {
+            "slots": {
+                "all lights": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": "blue light"
+                        }
+                    ]
+                },
+                "blue light2": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light3": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light4": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light5": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light6": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light7": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                },
+                "blue light8": {
+                    "attachment": [
+                        {
+                            "time": 0,
+                            "name": null
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "spiner 1": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 2": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 3": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                },
+                "spiner 4": {
+                    "rotate": [
+                        {
+                            "time": 0,
+                            "angle": 0
+                        },
+                        {
+                            "time": 0.1666,
+                            "angle": 90
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

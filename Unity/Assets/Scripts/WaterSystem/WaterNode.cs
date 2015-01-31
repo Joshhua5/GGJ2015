@@ -15,6 +15,12 @@ public class WaterNode : MonoBehaviour {
     [SerializeField]
     private Material onMaterial;
 
+    // Audio
+    [SerializeField]
+    private AudioClip _triggerOnSound;
+    [SerializeField]
+    private AudioClip _triggerOffSound;
+
     [SerializeField]
     private Room room;
 
@@ -153,7 +159,8 @@ public class WaterNode : MonoBehaviour {
 				connected = false;
 			}
 			on = false;
-		} 
+            AudioSource.PlayClipAtPoint(_triggerOffSound, Camera.main.transform.position);
+        } 
 		else 
 		{ 
 			on = true;
@@ -167,6 +174,7 @@ public class WaterNode : MonoBehaviour {
                 //room.Fire = null;
 				ws.useWater ();
 				connected = true;
+                AudioSource.PlayClipAtPoint(_triggerOnSound, Camera.main.transform.position);
 			}
 		} 
 		//this.audio.Play ();
