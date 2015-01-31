@@ -27,15 +27,26 @@ public class FireSpawner : MonoBehaviour {
 			if (!r.HasWater()){
             	// Spawn fire
             	GameObject obj = (GameObject)Instantiate(fire); 
-				Vector3 roomPos = rooms[roomId].transform.localPosition; 
+				Vector3 roomPos = rooms[roomId].transform.localPosition;  
+				if (roomId > 8){
+					//Debug.Log ("Room: "+roomId+" local pos: "+roomPos);
+					//Debug.Log ("Romm pos: "+rooms[roomId].transform.position);
+					//Debug.Log ("parent pos: "+rooms[roomId].transform.parent.position);
+					roomPos.x = roomPos.x+rooms[roomId].transform.parent.position.x;
+				}
 				obj.transform.position = roomPos + ((Vector3.right + Vector3.forward) * 64);
 				obj.transform.position = new Vector3(obj.transform.position.x, 0 , obj.transform.position.y);
 				Room cr = roomManager.getRoom (obj);
 				if (cr != null){
 					rooms[roomId].GetComponentInParent<Room>().Fire = obj;
 					Fire f = obj.GetComponentInParent<Fire>();
-					f.setRoom(cr);
-					cr.fires.Push (obj);
+					if (cr.HasWater ()){
+						Destroy(obj);
+					}
+					else {
+						f.setRoom(cr);
+						cr.fires.Push (obj);
+					}
 				}
 				else {
 					Destroy (obj);
