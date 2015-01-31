@@ -39,6 +39,11 @@ public class Play : MonoBehaviour
         }
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     private IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(5);

@@ -114,6 +114,7 @@ public class Agent : MonoBehaviour
         }
         else
         {
+            _state = AgentState.Idle;
             _animation.state.SetAnimation(0, "standing", true);
             _path = null;
         }
@@ -129,6 +130,7 @@ public class Agent : MonoBehaviour
         }
         else
         {
+            _state = AgentState.Idle;
             _animation.state.SetAnimation(0, "standing", true);
             _path = null;
             Debug.Log("Agent doesn't have an action");

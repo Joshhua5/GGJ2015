@@ -13,7 +13,7 @@ public class Game : MonoSingleton<Game>
     public int Score { get { return _score; } }
 
     [SerializeField]
-    private Agent[] _agents;
+    private GameObject _agents;
 
     [SerializeField]
     private Text _scoreLabel;
@@ -24,20 +24,52 @@ public class Game : MonoSingleton<Game>
     [SerializeField]
     private Text _deathLabel;
 
+    [SerializeField]
+    private GameObject _gameOverPanel;
+
+    [SerializeField]
+    private Text _gameOverScore;
+
+    [SerializeField]
+    private Button _restartButton;
+
+    [SerializeField]
+    private Button _exitButton;
+
+
+
     private List<Agent> _agentList;
 
 
     void Awake()
     {
-        _agentList = new List<Agent>(_agents);
+        _agentList = new List<Agent>(_agents.GetComponentsInChildren<Agent>());
+        Debug.Log(_agentList.Count);
         _scoreLabel.text = "Score: " + 0;
 
-        foreach(var agent in _agentList)
+        foreach (var agent in _agentList)
         {
             agent.OnAgentDeath += agent_OnAgentDeath;
         }
 
         UpdateLabels();
+
+        _gameOverPanel.SetActive(false);
+    }
+
+    public void OnRestartButtonClick()
+    {
+        Time.timeScale = 1.0f;
+        Application.LoadLevel("Level1");
+
+        _deaths = 0;
+        _surviviors = 0;
+        _score = 0;
+    }
+
+    public void OnExitButtonClick()
+    {
+        Application.Quit();
     }
 
     void agent_OnAgentDeath(Agent agent)
@@ -66,5 +98,17 @@ public class Game : MonoSingleton<Game>
         _scoreLabel.text = "SCORE: " + _score;
         _survivorLabel.text = "SURVIVIORS: " + _surviviors;
         _deathLabel.text = "LOST SOULS: " + _deaths;
+
+        CheckGameOver();
+    }
+
+    private void CheckGameOver()
+    {
+        if (_agentList.Count == 0)
+        {
+            Time.timeScale = 0.001f;
+            _gameOverPanel.SetActive(true);
+            _gameOverScore.text = "Score: " + _score;
+        }
     }
 }

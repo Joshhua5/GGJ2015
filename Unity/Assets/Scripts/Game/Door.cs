@@ -25,7 +25,6 @@ public class Door : MonoBehaviour
     private Room room;
     private SkeletonAnimation _animation;
     private bool charging;
-    Bounds bounds;
 
     public delegate void DoorStateChanged(bool isOpen);
     public event DoorStateChanged OnDoorStateChanged;
@@ -36,7 +35,6 @@ public class Door : MonoBehaviour
         _animation = GetComponentInChildren<SkeletonAnimation>();
         room = GetComponentInParent<Room>();
         Open = false;
-        bounds = collider.bounds;
         SetState(Open);
 
         charging = false;
