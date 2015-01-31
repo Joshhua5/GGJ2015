@@ -33,7 +33,9 @@ public class FireSpawner : MonoBehaviour {
 				Room cr = roomManager.getRoom (obj);
 				if (cr != null){
 					rooms[roomId].GetComponentInParent<Room>().Fire = obj;
-					obj.GetComponentInParent<Fire>().setRoom(cr);
+					Fire f = obj.GetComponentInParent<Fire>();
+					f.setRoom(cr);
+					cr.fires.Push (obj);
 				}
 				else {
 					Destroy (obj);

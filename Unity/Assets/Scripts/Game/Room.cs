@@ -16,6 +16,13 @@ public class Room : MonoBehaviour
 	private bool waterOn = false;
 
 	public PowerNode powerNode;
+	
+	public Stack<GameObject> fires = new Stack<GameObject>();
+	
+	//public List<GameObject> fires = new List<GameObject>();
+	[SerializeField]
+	private float waterRate = 1;
+	float charge=0;
 
     public GameObject Fire;
 
@@ -26,7 +33,9 @@ public class Room : MonoBehaviour
 		return waterOn;
 	}
 	
-	public void setHasWater(bool state){waterOn = state;}
+	public void setHasWater(bool state){
+		waterOn = state;
+	}
 
     public bool HasDoor
     {
@@ -41,6 +50,27 @@ public class Room : MonoBehaviour
     void Update()
     {
         _roomLight.enabled = powerNode.isActive();
+		charge += Time.deltaTime;
+		if (HasWater() && charge > waterRate){ 
+			killRandomFire();
+			charge=0;
+		}
+    }
+    
+    private void killRandomFire(){
+		if (fires.Count() > 0){
+			Debug.Log ("Num fires: "+fires.Count());
+			GameObject f = fires.Pop();
+			Destroy (f);
+			Debug.Log ("updated Num fires: "+fires.Count());
+			//System.Random rnd = new System.Random();
+			//int index = rnd.Next(fires.Count()-1);
+			//int index = fires.Count()-1;
+			//GameObject f = fires.ElementAt(index);
+			//fires.RemoveAt(index);
+			//Destroy (f);
+			//Debug.Log ("Destroyed fire "+index+" fires remaining: "+fires.Count());
+		}
     }
 
     public Door FirstDoor

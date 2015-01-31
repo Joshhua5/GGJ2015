@@ -48,10 +48,10 @@ public class Fire : MonoBehaviour
     {
         Vector3 modifier = new Vector3(0, 0, 0);
         charge += Time.deltaTime;
-		if (room.HasWater()) Destroy(this.gameObject);
-		else{
+		//if (room.HasWater()) Destroy(this.gameObject);
+		//else{
         // Possible to create fire nodes that don't spread to keep things in control
-        if (charge > spawnRate)
+        if (!room.HasWater () && charge > spawnRate)
         {
             charge = 0;
 			if (!room.HasWater ()){
@@ -120,9 +120,10 @@ public class Fire : MonoBehaviour
 	                newFire.gameObject.layer = Layers.Obstacles;
 					Fire f = newFire.GetComponentInParent<Fire>();
 					f.setRoom (cr);
+					cr.fires.Push(newFire);
 				}
 			}
         }
     }
-}
+//}
 }
