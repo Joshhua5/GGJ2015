@@ -8,6 +8,9 @@ public class Room : MonoBehaviour
 {
     [SerializeField]
     private Door[] _doors;
+    
+    [SerializeField]
+    private int id;
 
 	[SerializeField]
 	private bool waterOn = false;
@@ -47,4 +50,9 @@ public class Room : MonoBehaviour
             return _doors[0];
         }
     } 
-}
+    
+	public override string ToString(){
+		String s = "Room ID: "+this.id+" water? "+HasWater()+" power? "+powerNode.isActive();
+		return s;
+	}
+}	

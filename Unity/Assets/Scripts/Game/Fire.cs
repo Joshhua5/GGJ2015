@@ -77,8 +77,17 @@ public class Fire : MonoBehaviour
 	            }
 	             
 	            RaycastHit hit;
-	
-	            // Consider making 100 and then assume there's a large gap until a wall
+	            
+	            //Check that fire is still in the room
+	            RaycastHit hitR;
+	            Room cr = null;
+				if (Physics.Raycast(new Ray(transform.position + (modifier * 16) + (Vector3.up * 20), Vector3.down), out hitR, 50, 1 << Layers.Ground))
+				{
+						// should collide with the floor prefab so get Room from parent component
+						cr = hitR.collider.gameObject.GetComponentInParent<Room>();
+				}
+						
+						// Consider making 100 and then assume there's a large gap until a wall
 	            if (Physics.Raycast(new Ray(transform.position + (modifier * 16) + (Vector3.up * 20), Vector3.down), out hit, 50, 1 << Layers.Obstacles))
 	                // Stop fire from expanding back into fire
 	                if (hit.collider.gameObject.GetComponent<Fire>() != null)
@@ -96,9 +105,11 @@ public class Fire : MonoBehaviour
 	                    modifier.Set(0, 0, 0);
 	
 	                }    
-	
-	            if (!(modifier.x == 0 && modifier.y == 0 && modifier.z == 0))
+				// check that we're in a room first and have it correctly hooked up
+	            if (cr != null && !(modifier.x == 0 && modifier.y == 0 && modifier.z == 0))
 	            { 
+					//Debug.Log ("parent fire in "+room.ToString());
+					//Debug.Log ("Spawn new fire in room "+cr.ToString());
 	                // Spawn new fire
 	                GameObject newFire = (GameObject)Instantiate(fireObject);
 	                newFire.transform.parent = this.transform;
@@ -107,9 +118,11 @@ public class Fire : MonoBehaviour
 	                newFire.transform.position += modifier * 16;
 	                // Swap afterwards to be exluded from the raycast
 	                newFire.gameObject.layer = Layers.Obstacles;
-	            } 
-	        }
-        }
+					Fire f = newFire.GetComponentInParent<Fire>();
+					f.setRoom (cr);
+				}
+			}
         }
     }
+}
 }
