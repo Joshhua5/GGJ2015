@@ -108,14 +108,12 @@ public class Fire : MonoBehaviour
 				// check that we're in a room first and have it correctly hooked up
 	            if (cr != null && !(modifier.x == 0 && modifier.y == 0 && modifier.z == 0))
 	            { 
-					//Debug.Log ("parent fire in "+room.ToString());
-					//Debug.Log ("Spawn new fire in room "+cr.ToString());
-	                // Spawn new fire
+				
 	                GameObject newFire = (GameObject)Instantiate(fireObject);
-	                newFire.transform.parent = this.transform;
-	                newFire.transform.localPosition = new Vector3(0, 0, 0);
-	
-	                newFire.transform.position += modifier * 16;
+	               
+					Vector3 oldPos = this.transform.localPosition; 
+					newFire.transform.position = oldPos + modifier * 16;
+
 	                // Swap afterwards to be exluded from the raycast
 	                newFire.gameObject.layer = Layers.Obstacles;
 					Fire f = newFire.GetComponentInParent<Fire>();
